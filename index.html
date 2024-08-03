@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.2.2/jsxgraphcore.js"></script>
+    <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
+    <title>MathIntuit - Interactive Education Mathematics Platform!</title>
+  </head>
+  <body>
+    <!-- header navigation -->
+    <div id="header"></div>
+
+    <!-- hero section -->
+    <div class="container col-xxl-8 px-0 py-3">
+      <div class="row flex-lg-row-reverse align-items-center py-3 container-sm">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img
+            src="./asset/math-images/hero-img1.png"
+            class="d-block mx-lg-auto img-fluid"
+            alt="Bootstrap Themes"
+            width="700"
+            height="500"
+            loading="lazy"
+          />
+        </div>
+        <div class="col-lg-6 d-flex flex-column gap-2">
+          <h1 class="display-5 fw-bold lh-2 mb-3">
+            Interactive Educational Platform for Mathematics
+          </h1>
+          <p class="fs-5">
+            Quickly design and customize responsive mobile-first sites with
+            Bootstrap, the world’s most popular front-end open source toolkit,
+            featuring Sass variables and mixins, responsive grid system,
+            extensive prebuilt components, and powerful JavaScript plugins.
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a
+              href="./src/calculatorSuite.html"
+              type="button"
+              class="btn btn-primary btn-lg px-4 py-2 me-md-2"
+            >
+              Start Calculator
+            </a>
+            <a
+              href="./src/mathtopic.html?topic=algebra"
+              type="button"
+              class="btn btn-outline-secondary btn-lg px-4 py-2"
+            >
+              Explore Math Resources
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommended math resources -->
+      <div class="col-lg-12 mt-5 container">
+        <h2 class="fs-4">Recommended Math Resources:</h2>
+        <p class="fs-5">For High school and Institution</p>
+        <div class="resources-button-group d-flex gap-3 flex-wrap">
+          <a
+            href="./src/mathtopic.html?topic=algebra"
+            type="button"
+            class="btn btn-outline-secondary btn-lg px-4 py-2"
+          >
+            Algebra
+          </a>
+          <a
+            href="./src/mathtopic.html?topic=geometry"
+            type="button"
+            class="btn btn-outline-secondary btn-lg px-4 py-2"
+          >
+            Geometry
+          </a>
+          <a
+            href="./src/mathtopic.html?topic=measurement"
+            type="button"
+            class="btn btn-outline-secondary btn-lg px-4 py-2"
+          >
+            Measurement
+          </a>
+          <a
+            href="./src/mathtopic.html?topic=trigonometry"
+            type="button"
+            class="btn btn-outline-secondary btn-lg px-4 py-2"
+          >
+            Trigonometry
+          </a>
+          <a
+            href="./src/mathtopic.html?topic=calculus"
+            type="button"
+            class="btn btn-outline-secondary btn-lg px-4 py-2"
+          >
+            Calculus
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- features section -->
+    <div class="features mt-5">
+      <div class="container col-xxl-8 py-5">
+        <h1 class="display-5 fw-bold text-center">Features</h1>
+
+        <div class="row">
+          <!-- feature 1 - Math can be interactive -->
+          <div
+            class="row align-items-center mt-5 py-5 gap-4 justify-content-between"
+          >
+            <div class="col-lg-5 d-flex flex-column gap-2">
+              <h1 class="display-5 fw-bold mb-3">Math can be Interactive</h1>
+              <p class="fs-5 lead">
+                Try our exploration activities to discover important math
+                concepts. Visual, interactive lessons make concepts feel
+                intuitive
+              </p>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a
+                  href="resources.html"
+                  type="button"
+                  class="btn btn-primary btn-lg px-4 py-2 me-md-2"
+                >
+                  Explore Resources
+                </a>
+              </div>
+            </div>
+            <div class="col-10 col-sm-8 col-lg-5 d-flex justify-content-center">
+              <div class="W-100">
+                <video
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  class="shadow rounded w-100"
+                >
+                  <source
+                    src="https://www.geogebra.org/sp-assets/assets/animations/animation_applet.webm"
+                    type="video/webm"
+                  />
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <!-- feature 2 - Explore our Calculator -->
+          <div
+            class="row flex-lg-row-reverse align-items-center mt-5 py-5 gap-4 justify-content-between"
+          >
+            <div class="col-lg-5 d-flex flex-column gap-2">
+              <h1 class="display-5 fw-bold mb-3">
+                Explore the free Math Calculator
+              </h1>
+              <p class="fs-5 lead">
+                Try our exploration activities to discover important math
+                concepts. Visual, interactive lessons make concepts feel
+                intuitive
+              </p>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a
+                  href="calculator.html"
+                  type="button"
+                  class="btn btn-primary btn-lg px-4 py-2 me-md-2"
+                >
+                  Explore Calculator
+                </a>
+              </div>
+            </div>
+            <div class="col-10 col-sm-8 col-lg-5 d-flex justify-content-center">
+              <div class="w-100">
+                <video
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  class="shadow rounded w-100"
+                >
+                  <source
+                    src="https://www.geogebra.org/sp-assets/assets/animations/animation_applet.webm"
+                    type="video/webm"
+                  />
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <!-- feature 3 - Math can be interactive -->
+          <div
+            class="row mt-5 py-5 gap-4 align-items-center justify-content-between"
+          >
+            <div class="col-lg-5 d-flex flex-column gap-2">
+              <h1 class="display-5 fw-bold mb-3">Other Math examples</h1>
+              <p class="fs-5 lead">
+                Try our exploration activities to discover important math
+                concepts. Visual, interactive lessons make concepts feel
+                intuitive
+              </p>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a
+                  href="resources.html"
+                  type="button"
+                  class="btn btn-primary btn-lg px-4 py-2 me-md-2"
+                >
+                  View examples
+                </a>
+              </div>
+            </div>
+            <div class="col-10 col-sm-8 col-lg-5 d-flex justify-content-center">
+              <div class="w-100">
+                <video
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  class="shadow rounded w-100"
+                >
+                  <source
+                    src="https://www.geogebra.org/sp-assets/assets/animations/animation_applet.webm"
+                    type="video/webm"
+                  />
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <!-- feature 4 - Explore our Calculator -->
+          <div
+            class="row flex-lg-row-reverse align-items-center mt-5 py-5 gap-4 justify-content-between"
+          >
+            <div class="col-lg-5 d-flex flex-column gap-2">
+              <h1 class="display-5 fw-bold mb-3">
+                You can play games build with Mathematics
+              </h1>
+              <p class="fs-5 lead">
+                Try our exploration activities to discover important math
+                concepts. Visual, interactive lessons make concepts feel
+                intuitive
+              </p>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a
+                  href="./src/calculatorSuite.html"
+                  type="button"
+                  class="btn btn-primary btn-lg px-4 py-2 me-md-2"
+                >
+                  Play games
+                </a>
+              </div>
+            </div>
+            <div class="col-10 col-sm-8 col-lg-5 d-flex justify-content-center">
+              <div class="w-100">
+                <video
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  class="shadow rounded w-100"
+                >
+                  <source
+                    src="https://www.geogebra.org/sp-assets/assets/animations/animation_applet.webm"
+                    type="video/webm"
+                  />
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Get Started with us -->
+    <div id="get-started"></div>
+
+    <!-- footer section -->
+    <div id="footer"></div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script type="" src="./src/js/dynamicContent.js"></script> -->
+    <script type="" src="./src/js/script.js"></script>
+  </body>
+</html>

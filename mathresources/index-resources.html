@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.2.2/jsxgraphcore.js"></script>
+    <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
+    <title>MathIntuit Math Resources</title>
+  </head>
+  <body>
+    <!-- header navigation -->
+    <div id="header"></div>
+
+    <!-- Link and topic name section -->
+    <div class="container">
+      <div class="col-xxl-8 px-0 py-3 mt-5">
+        <nav
+          style="
+            --bs-breadcrumb-divider: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%228%22 height=%228%22 viewBox=%220 0 8 8%22%3E%3Cpath d=%22M1 0L0 1l3 3-3 3 1 1 4-4-4-4z%22 fill=%22currentColor%22/%3E%3C/svg%3E');
+          "
+          aria-label="breadcrumb"
+        >
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-topic"></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Topic Header with image -->
+    <div class="container">
+      <div
+        class="d-flex align-items-center p-3 my-2"
+      >
+        <img
+          class="me-3"
+          src=""
+          alt=""
+          width="48"
+          height="38"
+          id="topic-image"
+        />
+        <div class="lh-1">
+          <h2 class="h2 mb-0" id="topic-heading">Algebra</h1>
+        </div>
+      </div>
+      <p class="lead fs-5" id="topic-content">
+        Explore intuitive and interactive resources for learning and practicing
+        algebra, perfect for both lecturers and students.
+      </p>
+    </div>
+
+    <!-- Recommended Resources -->
+    <div class="container">
+      <div class="col-xxl-12 px-0 py-3">
+        <div class="col-lg-12">
+          <div class="resources-button-group d-flex gap-3 flex-wrap">
+            <a
+              href="./src/mathtopic.html?topic=algebra"
+              type="button"
+              class="btn btn-outline-secondary btn-lg px-4 py-2"
+            >
+              Algebra
+            </a>
+            <a
+              href="./src/mathtopic.html?topic=geometry"
+              type="button"
+              class="btn btn-outline-secondary btn-lg px-4 py-2"
+            >
+              Geometry
+            </a>
+            <a
+              href="./src/mathtopic.html?topic=measurement"
+              type="button"
+              class="btn btn-outline-secondary btn-lg px-4 py-2"
+            >
+              Measurement
+            </a>
+            <a
+              href="./src/mathtopic.html?topic=trigonometry"
+              type="button"
+              class="btn btn-outline-secondary btn-lg px-4 py-2"
+            >
+              Trigonometry
+            </a>
+            <a
+              href="./src/mathtopic.html?topic=calculus"
+              type="button"
+              class="btn btn-outline-secondary btn-lg px-4 py-2"
+            >
+              Calculus
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topic features -->
+    <main class="container">
+      <div class="px-1 py-3 mt-3">
+        <h2 class="h2">Topics on Algebra</h2>
+        <div class="row mt-3" id="features-container">
+          <div class="col-12 col-lg-6">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex flex-column align-items-end"><a href="" class="btn btn-outline-secondary px-4 py-2">Explore</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 col-lg-6">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex flex-column align-items-end"><a href="" class="btn btn-outline-secondary px-4 py-2">Explore</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex flex-column align-items-end"><a href="" class="btn btn-outline-secondary px-4 py-2">Explore</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 col-lg-6">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title 2</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex flex-column align-items-end"><a href="" class="btn btn-outline-secondary px-4 py-2">Explore</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+
+    <!-- Get Started with us -->
+    <div id="get-started"></div>
+
+    <!-- footer section -->
+    <div id="footer"></div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch('component/nav.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header').innerHTML = data;
+          });
+  
+        fetch('component/footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer').innerHTML = data;
+          });
+  
+          fetch('component/get-started.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('get-started').innerHTML = data;
+          });
+  
+        const params = new URLSearchParams(window.location.search);
+        const topic = params.get("topic");
+  
+        if (topic) {
+          loadContent(topic);
+        }
+      });
+    </script>
+    <script type="" src="./js/dynamicContent.js"></script>
+    <!-- <script src="./js/script.js"></script> -->
+  </body>
+</html>

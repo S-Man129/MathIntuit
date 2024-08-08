@@ -12,7 +12,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../src/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -74,39 +74,46 @@
         <div class="col-lg-12">
           <div class="resources-button-group d-flex gap-3 flex-wrap">
             <a
-              href="./src/mathtopic.html?topic=algebra"
+              href="./mathresources/index-resources.html?topic=algebra"
               type="button"
               class="btn btn-outline-secondary btn-lg px-4 py-2"
             >
               Algebra
             </a>
             <a
-              href="./src/mathtopic.html?topic=geometry"
+              href="./mathresources/index-resources.html?topic=geometry"
               type="button"
               class="btn btn-outline-secondary btn-lg px-4 py-2"
             >
               Geometry
             </a>
             <a
-              href="./src/mathtopic.html?topic=measurement"
+              href="./mathresources/index-resources.html?topic=measurement"
               type="button"
               class="btn btn-outline-secondary btn-lg px-4 py-2"
             >
               Measurement
             </a>
             <a
-              href="./src/mathtopic.html?topic=trigonometry"
+              href="./mathresources/index-resources.html?topic=trigonometry"
               type="button"
               class="btn btn-outline-secondary btn-lg px-4 py-2"
             >
               Trigonometry
             </a>
             <a
-              href="./src/mathtopic.html?topic=calculus"
+              href="./mathresources/index-resources.html?topic=calculus"
               type="button"
               class="btn btn-outline-secondary btn-lg px-4 py-2"
             >
-              Calculus
+              Calculus and Analysis
+            </a>
+            <a
+              href="./mathresources/index-resources.html?topic=appliedMath"
+              type="button"
+              class="btn btn-outline-secondary btn-lg px-4 py-2"
+            >
+              Applied Mathematics
             </a>
           </div>
         </div>
@@ -116,7 +123,7 @@
     <!-- Topic features -->
     <main class="container">
       <div class="px-1 py-3 mt-3">
-        <h2 class="h2">Topics on Algebra</h2>
+        <h2 class="h2">Topics on <span id="topic-explore-heading">Algebra</span> </h2>
         <div class="row mt-3" id="features-container">
           <div class="col-12 col-lg-6">
             <div class="card mb-3">
@@ -206,19 +213,19 @@
     ></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        fetch('component/nav.html')
+        fetch('../components/nav.html')
           .then(response => response.text())
           .then(data => {
             document.getElementById('header').innerHTML = data;
           });
   
-        fetch('component/footer.html')
+        fetch('../components/footer.html')
           .then(response => response.text())
           .then(data => {
             document.getElementById('footer').innerHTML = data;
           });
   
-          fetch('component/get-started.html')
+          fetch('../components/get-started.html')
           .then(response => response.text())
           .then(data => {
             document.getElementById('get-started').innerHTML = data;
@@ -232,7 +239,7 @@
         }
       });
     </script>
-    <script type="" src="./js/dynamicContent.js"></script>
+    <script type="" src="../src/js/dynamicContent.js"></script>
     <!-- <script src="./js/script.js"></script> -->
   </body>
 </html>

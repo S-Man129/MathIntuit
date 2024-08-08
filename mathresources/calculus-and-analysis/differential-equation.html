@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Differential Equations</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="./src/css/style.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+      }
+      .formula {
+        margin: 20px 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Differential Equations</h1>
+    <p>
+      A differential equation is a mathematical equation that relates a function
+      with its derivatives. Differential equations are used to model various
+      physical systems, such as motion, heat, electricity, and fluid dynamics.
+      They can describe how a quantity changes over time or space.
+    </p>
+
+    <h2>Types of Differential Equations</h2>
+    <h3>Ordinary Differential Equations (ODEs)</h3>
+    <p>
+      Involves functions of a single variable and their derivatives. For
+      example:
+    </p>
+    <div class="formula">\( \frac{dy}{dx} = ky \)</div>
+
+    <h3>Partial Differential Equations (PDEs)</h3>
+    <p>
+      Involves functions of multiple variables and their partial derivatives.
+      For example:
+    </p>
+    <div class="formula">
+      \( \frac{\partial u}{\partial t} = c^2 \frac{\partial^2 u}{\partial x^2}
+      \)
+    </div>
+
+    <h2>Solving Differential Equations</h2>
+    <h3>Separation of Variables</h3>
+    <p>
+      This method involves rearranging the equation to separate the variables on
+      either side of the equation. For example:
+    </p>
+    <div class="formula">\( \frac{dy}{dx} = ky \)</div>
+    <p>Rearrange to:</p>
+    <div class="formula">\( \frac{1}{y} dy = k dx \)</div>
+    <p>Integrate both sides:</p>
+    <div class="formula">\( \ln|y| = kx + C \)</div>
+    <p>Solve for \( y \):</p>
+    <div class="formula">\( y = Ce^{kx} \)</div>
+
+    <h3>Integrating Factor</h3>
+    <p>
+      Used for first-order linear ODEs of the form \( \frac{dy}{dx} + P(x)y =
+      Q(x) \). The integrating factor is \( e^{\int P(x) dx} \).
+    </p>
+
+    <h3>Characteristic Equation</h3>
+    <p>
+      For linear differential equations with constant coefficients. For example,
+      for \( ay'' + by' + cy = 0 \), assume a solution \( y = e^{rt} \) and
+      solve the characteristic equation \( ar^2 + br + c = 0 \).
+    </p>
+
+    <h2>Example: Solving an ODE</h2>
+    <p>Solve the first-order ODE:</p>
+    <div class="formula">\( \frac{dy}{dx} = y \cos(x) \)</div>
+
+    <h3>Step 1: Separate the variables</h3>
+    <div class="formula">\( \frac{1}{y} dy = \cos(x) dx \)</div>
+
+    <h3>Step 2: Integrate both sides</h3>
+    <div class="formula">\( \int \frac{1}{y} dy = \int \cos(x) dx \)</div>
+    <div class="formula">\( \ln|y| = \sin(x) + C \)</div>
+
+    <h3>Step 3: Solve for \( y \)</h3>
+    <div class="formula">\( y = e^{\sin(x) + C} \)</div>
+    <div class="formula">\( y = Ce^{\sin(x)} \)</div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

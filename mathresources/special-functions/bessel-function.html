@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bessel Function</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="./src/css/style.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+      }
+      .formula {
+        margin: 20px 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bessel Function</h1>
+    <p>
+      Bessel functions are canonical solutions to Bessel's differential
+      equation:
+    </p>
+    <div class="formula">
+      \( x^2 \frac{d^2 y}{dx^2} + x \frac{dy}{dx} + (x^2 - n^2)y = 0 \)
+    </div>
+    <p>
+      where \( n \) is a real number, often an integer. These functions are
+      named after Friedrich Bessel and are essential in many fields such as wave
+      propagation, static potentials, and quantum mechanics.
+    </p>
+
+    <h2>Types of Bessel Functions</h2>
+    <h3>Bessel Functions of the First Kind \( J_n(x) \)</h3>
+    <p>
+      These are solutions to Bessel's equation that are finite at \( x = 0 \)
+      for non-negative integers \( n \).
+    </p>
+    <div class="formula">
+      \( J_n(x) = \sum_{m=0}^{\infty} \frac{(-1)^m}{m! \, \Gamma(m+n+1)} \left(
+      \frac{x}{2} \right)^{2m+n} \)
+    </div>
+    <p>For example:</p>
+    <div class="formula">
+      \( J_0(x) = \sum_{m=0}^{\infty} \frac{(-1)^m}{(m!)^2} \left( \frac{x}{2}
+      \right)^{2m} \)
+    </div>
+
+    <h3>Bessel Functions of the Second Kind \( Y_n(x) \)</h3>
+    <p>
+      These are solutions to Bessel's equation that have a singularity at \( x =
+      0 \). They are also known as Neumann functions or Weber functions.
+    </p>
+    <p>For non-negative integers \( n \):</p>
+    <div class="formula">
+      \( Y_n(x) = \frac{J_n(x) \cos(n\pi) - J_{-n}(x)}{\sin(n\pi)} \)
+    </div>
+
+    <h2>Applications of Bessel Functions</h2>
+    <ul>
+      <li>
+        <strong>Electromagnetic Waves</strong>: Bessel functions appear in the
+        solutions of the wave equation in cylindrical coordinates.
+      </li>
+      <li>
+        <strong>Heat Conduction</strong>: They describe the radial part of the
+        temperature distribution in a cylindrical object.
+      </li>
+      <li>
+        <strong>Vibrations</strong>: They are used to model vibrations of
+        circular membranes.
+      </li>
+    </ul>
+
+    <h2>Example</h2>
+    <p>Consider solving the differential equation:</p>
+    <div class="formula">
+      \( x^2 \frac{d^2 y}{dx^2} + x \frac{dy}{dx} + (x^2 - 4)y = 0 \)
+    </div>
+    <p>This corresponds to \( n = 2 \). The general solution is:</p>
+    <div class="formula">\( y(x) = A J_2(x) + B Y_2(x) \)</div>
+    <p>
+      where \( J_2(x) \) and \( Y_2(x) \) are Bessel functions of the first and
+      second kind, respectively, and \( A \) and \( B \) are constants
+      determined by boundary conditions.
+    </p>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

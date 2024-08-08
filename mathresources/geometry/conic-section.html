@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conic Sections</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="./src/css/style.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+      }
+      .formula {
+        margin: 20px 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Conic Sections</h1>
+    <p>
+      Conic sections are the curves obtained by intersecting a plane with a
+      double-napped cone. The angle of the plane relative to the cone determines
+      the shape of the intersection. The primary types of conic sections are
+      circles, ellipses, parabolas, and hyperbolas.
+    </p>
+
+    <h2>Types of Conic Sections</h2>
+
+    <h3>Circle</h3>
+    <p>
+      A circle is formed when the plane is perpendicular to the axis of the
+      cone.
+    </p>
+    <div class="formula">\( (x - h)^2 + (y - k)^2 = r^2 \)</div>
+    <p>Here, \((h, k)\) is the center, and \(r\) is the radius.</p>
+
+    <h3>Ellipse</h3>
+    <p>
+      An ellipse is formed when the plane is angled such that it intersects both
+      nappes of the cone but does not pass through the apex.
+    </p>
+    <div class="formula">
+      \( \frac{(x - h)^2}{a^2} + \frac{(y - k)^2}{b^2} = 1 \)
+    </div>
+    <p>
+      Here, \((h, k)\) is the center, \(a\) is the semi-major axis, and \(b\) is
+      the semi-minor axis.
+    </p>
+
+    <h3>Parabola</h3>
+    <p>
+      A parabola is formed when the plane is parallel to a generator of the
+      cone.
+    </p>
+    <div class="formula">\( y - k = a(x - h)^2 \)</div>
+    <p>
+      Here, \((h, k)\) is the vertex, and \(a\) is a constant that determines
+      the width of the parabola.
+    </p>
+
+    <h3>Hyperbola</h3>
+    <p>
+      A hyperbola is formed when the plane intersects both nappes of the cone in
+      such a way that the angle is steeper than the angle of the cone.
+    </p>
+    <div class="formula">
+      \( \frac{(x - h)^2}{a^2} - \frac{(y - k)^2}{b^2} = 1 \)
+    </div>
+    <p>
+      Here, \((h, k)\) is the center, \(a\) is the distance between the vertices
+      and the center along the transverse axis, and \(b\) is the distance
+      between the vertices and the center along the conjugate axis.
+    </p>
+
+    <h2>Applications of Conic Sections</h2>
+    <ul>
+      <li>
+        <strong>Orbits of Planets</strong>: Ellipses describe the orbits of
+        planets and satellites.
+      </li>
+      <li>
+        <strong>Reflective Properties</strong>: Parabolas are used in the design
+        of telescopes and satellite dishes due to their reflective properties.
+      </li>
+      <li>
+        <strong>Architecture and Engineering</strong>: Hyperbolas are used in
+        structures like cooling towers and suspension bridges for their
+        structural properties.
+      </li>
+    </ul>
+
+    <h2>Example</h2>
+    <p>
+      Find the equation of a parabola with vertex at \((1, 2)\) and focus at
+      \((1, 5)\).
+    </p>
+    <p>
+      The distance from the vertex to the focus is \( |k - k'| = 3 \). The
+      parabola opens upwards because the focus is above the vertex. The standard
+      form of the equation is:
+    </p>
+    <div class="formula">\( (x - h)^2 = 4p(y - k) \)</div>
+    <p>Here, \( (h, k) = (1, 2) \) and \( 4p = 12 \) (since \( p = 3 \)).</p>
+    <p>So, the equation is:</p>
+    <div class="formula">\( (x - 1)^2 = 12(y - 2) \)</div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

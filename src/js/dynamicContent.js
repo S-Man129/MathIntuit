@@ -29,11 +29,18 @@ const contentData = {
     image: "../../asset/course-icon-images/trigonometry.jpg",
   },
   calculus: {
-    title: "Learn Calculus - MathIntuit Math Resources",
-    heading: "Calculus",
+    title: "Learn Calculus and Analysis - MathIntuit Math Resources",
+    heading: "Calculus and Analysis",
     content:
-      "Explore intuitive and interactive resources for learning and practicing calculus, perfect for both lecturers and students.",
+      "Explore intuitive and interactive resources for learning and practicing calculus and analysis, perfect for both lecturers and students.",
     image: "../../asset/course-icon-images/calculus.jpg",
+  },
+  appliedMath: {
+    title: "Learn Math Application - MathIntuit Math Resources",
+    heading: "Applied Mathematics",
+    content:
+      "Explore intuitive and interactive resources for learning and practicing how mathematics is applied in real life scenarios, perfect for both lecturers and students.",
+    image: "../../asset/course-icon-images/applied-math.jpg",
   },
 };
 
@@ -46,11 +53,13 @@ function loadContent(topic) {
       contentData[topic].heading;
     document.getElementById("topic-content").innerText =
       contentData[topic].content;
+    document.getElementById("topic-explore-heading").innerText =
+      contentData[topic].heading;
     document.getElementById("topic-image").src = contentData[topic].image;
     history.pushState(
       { topic },
       contentData[topic].title,
-      `mathtopic.html?topic=${topic}`
+      `index-resources.html?topic=${topic}`
     );
     document.querySelectorAll(".resources-button-group a").forEach((link) => {
       link.classList.remove("selected");
@@ -79,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document.querySelectorAll(".navbar-brand").forEach((brand) => {
-    brand.href = "index.html";
-  }); // Ensure the navbrand points to the index page
+  // document.querySelectorAll(".navbar-brand").forEach((brand) => {
+  //   brand.href = "index.html";
+  // }); // Ensure the navbrand points to the index page
 });

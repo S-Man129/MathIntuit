@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lotka-Volterra Predator-Prey Model</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #333;
+      }
+      .formula {
+        margin: 20px 0;
+        text-align: center;
+      }
+      ul {
+        margin: 20px 0;
+        padding-left: 20px;
+      }
+      p,
+      li {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lotka-Volterra Predator-Prey Model</h1>
+    <p>
+      The Lotka-Volterra model, also known as the predator-prey model, is a pair
+      of first-order, non-linear differential equations that describe the
+      dynamics of two interacting species: a predator and its prey. This model
+      was independently proposed by Alfred J. Lotka in 1925 and Vito Volterra in
+      1926. It serves as a foundational concept in population dynamics,
+      particularly in ecology, and provides insight into how species interact in
+      an ecosystem.
+    </p>
+
+    <h2>The Basic Equations</h2>
+    <p>
+      The Lotka-Volterra model consists of two coupled differential equations:
+    </p>
+    <div class="formula">
+      \[ \frac{dN}{dt} = \alpha N - \beta N P \] \[ \frac{dP}{dt} = \delta N P -
+      \gamma P \]
+    </div>
+    <p>where:</p>
+    <ul>
+      <li>\( N(t) \) represents the prey population size at time \( t \).</li>
+      <li>
+        \( P(t) \) represents the predator population size at time \( t \).
+      </li>
+      <li>
+        \( \alpha \) is the natural growth rate of the prey in the absence of
+        predators.
+      </li>
+      <li>\( \beta \) is the rate at which predators capture prey.</li>
+      <li>
+        \( \gamma \) is the death rate of predators in the absence of prey.
+      </li>
+      <li>
+        \( \delta \) is the rate at which predators increase by consuming prey.
+      </li>
+    </ul>
+
+    <h2>Interpretation of the Equations</h2>
+    <h3>1. Prey Population Equation \(\frac{dN}{dt} = \alpha N - \beta NP\)</h3>
+    <ul>
+      <li>
+        The term \( \alpha N \) represents the exponential growth of the prey
+        population in the absence of predators.
+      </li>
+      <li>
+        The term \( \beta NP \) accounts for the reduction in the prey
+        population due to predation, where the rate of prey being caught is
+        proportional to the interaction between the predator and prey
+        populations.
+      </li>
+    </ul>
+
+    <h3>
+      2. Predator Population Equation \(\frac{dP}{dt} = \delta NP - \gamma P\)
+    </h3>
+    <ul>
+      <li>
+        The term \( \delta NP \) represents the growth of the predator
+        population based on the availability of prey.
+      </li>
+      <li>
+        The term \( \gamma P \) accounts for the natural decline in the predator
+        population in the absence of prey, as predators rely on prey for
+        sustenance.
+      </li>
+    </ul>
+
+    <h2>Dynamics of the Model</h2>
+    <p>
+      The Lotka-Volterra model exhibits oscillatory behavior in the populations
+      of both predators and prey. These oscillations are cyclical, with the prey
+      population typically peaking before the predator population. The dynamics
+      can be summarized as follows:
+    </p>
+    <ul>
+      <li>
+        <strong>When the prey population is large</strong>: Predators have
+        abundant food, leading to an increase in the predator population. As a
+        result, more prey are consumed, which causes the prey population to
+        decline.
+      </li>
+      <li>
+        <strong>As the prey population declines</strong>: The predator
+        population, which depends on prey for survival, also starts to decline
+        due to the lack of food.
+      </li>
+      <li>
+        <strong>When the predator population is low</strong>: The reduced
+        pressure from predation allows the prey population to recover and grow.
+      </li>
+      <li>
+        <strong>As the prey population grows</strong>: The cycle begins anew,
+        with predators increasing in response to the higher availability of
+        prey.
+      </li>
+    </ul>
+    <p>
+      These dynamics lead to periodic oscillations in the populations of both
+      species, often visualized as out-of-phase sine waves.
+    </p>
+
+    <h2>Example: Rabbit and Fox Population</h2>
+    <p>
+      Consider a simplified ecosystem where rabbits are the prey, and foxes are
+      the predators. Let's assume:
+    </p>
+    <ul>
+      <li>
+        \( \alpha = 0.1 \) (Rabbits can naturally increase by 10% per month
+        without foxes).
+      </li>
+      <li>
+        \( \beta = 0.01 \) (Each encounter between a rabbit and a fox results in
+        a 1% chance of the rabbit being caught).
+      </li>
+      <li>
+        \( \gamma = 0.1 \) (Foxes die out at a rate of 10% per month without
+        food).
+      </li>
+      <li>
+        \( \delta = 0.01 \) (Each rabbit caught results in a 1% increase in the
+        fox population).
+      </li>
+    </ul>
+    <p>
+      The coupled differential equations for the rabbit and fox populations
+      become:
+    </p>
+    <div class="formula">
+      \[ \frac{dN}{dt} = 0.1N - 0.01NP \] \[ \frac{dP}{dt} = 0.01NP - 0.1P \]
+    </div>
+    <p>
+      If we solve these equations numerically or analyze them graphically, we
+      observe that the rabbit population increases when there are few foxes, but
+      as the fox population grows (due to the abundance of rabbits), the number
+      of rabbits starts to decline. As the rabbit population decreases, the fox
+      population eventually starts to decrease as well due to the lack of food,
+      allowing the rabbit population to recover.
+    </p>
+
+    <h2>Stability and Equilibrium Points</h2>
+    <p>The Lotka-Volterra model has two important equilibrium points:</p>
+    <ul>
+      <li>
+        <strong>Trivial Equilibrium</strong> \((N, P) = (0, 0)\): Both
+        populations are extinct, which is an unstable equilibrium point.
+      </li>
+      <li>
+        <strong>Non-Trivial Equilibrium</strong> \((N, P) =
+        \left(\frac{\gamma}{\delta}, \frac{\alpha}{\beta}\right)\): This point
+        represents a situation where both populations coexist in a stable
+        environment. Small perturbations around this point lead to oscillations
+        rather than a collapse or explosive growth.
+      </li>
+    </ul>
+
+    <h2>Limitations of the Lotka-Volterra Model</h2>
+    <p>
+      While the Lotka-Volterra model provides valuable insights, it has several
+      limitations:
+    </p>
+    <ul>
+      <li>
+        <strong>No Carrying Capacity</strong>: The model assumes that the prey
+        population can grow indefinitely in the absence of predators, which is
+        unrealistic. Real ecosystems have carrying capacities that limit
+        population growth.
+      </li>
+      <li>
+        <strong>No Intraspecific Competition</strong>: The model does not
+        account for competition within the prey or predator populations, such as
+        competition for food, which can also influence population dynamics.
+      </li>
+      <li>
+        <strong>Constant Interaction Rates</strong>: The interaction rates
+        (\(\beta\) and \(\delta\)) are assumed to be constant, but in reality,
+        these rates can vary depending on factors such as the availability of
+        hiding places for prey or the efficiency of predators.
+      </li>
+      <li>
+        <strong>No Time Delays</strong>: The model does not incorporate time
+        delays, such as the time it takes for a predator population to respond
+        to changes in prey population size.
+      </li>
+    </ul>
+
+    <h2>Extensions and Real-World Applications</h2>
+    <p>
+      Despite its simplicity, the Lotka-Volterra model has been extended and
+      applied in various fields:
+    </p>
+    <ul>
+      <li>
+        <strong>Competition Models</strong>: Extensions of the Lotka-Volterra
+        model are used to study competition between two species for the same
+        resource. This includes models that incorporate the carrying capacity of
+        the environment and interspecific competition.
+      </li>
+      <li>
+        <strong>Real-World Ecosystems</strong>: The model has been applied to
+        real-world predator-prey systems, such as the interactions between
+        wolves and deer, lynx and snowshoe hare, and plankton species in marine
+        ecosystems.
+      </li>
+      <li>
+        <strong>Epidemiology</strong>: The model has been adapted to study the
+        spread of infectious diseases, where the "predator" can be interpreted
+        as the disease and the "prey" as the susceptible population.
+      </li>
+      <li>
+        <strong>Economics and Social Sciences</strong>: Variants of the
+        Lotka-Volterra equations have been used in economics to model
+        competition between firms and in social sciences to study dynamics
+        between different social groups or behaviors.
+      </li>
+    </ul>
+
+    <h2>Summary</h2>
+    <p>
+      The Lotka-Volterra predator-prey model is a classic framework for
+      understanding the dynamic interactions between two species in an
+      ecosystem. It demonstrates how predator and prey populations oscillate
+      over time, with each species influencing the other's population size.
+      While the model has limitations, its simplicity makes it a foundational
+      tool in ecology and other fields. By understanding the basics of this
+      model, researchers and practitioners can gain valuable insights into the
+      complex interdependencies within natural and human systems.
+    </p>
+  </body>
+</html>

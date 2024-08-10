@@ -1,8 +1,8 @@
 var params = {
-  appName: "graphing",
+  appName: "suite",
   id: "ggbApplet",
-  width: 1000,
-  height: 600,
+  width: 1600,
+  height: 800,
   showToolBar: true,
   showAlgebraInput: true,
   showMenuBar: true,
@@ -42,11 +42,11 @@ function initializeFeatures() {
   ggbApplet.evalCommand("D = Midpoint(A, B)");
   ggbApplet.evalCommand("E = Midpoint(B, C)");
   ggbApplet.evalCommand("F = Midpoint(C, A)");
-  ggbApplet.evalCommand("circumcircle = Circumcircle(A, B, C)");
+  // ggbApplet.evalCommand("Circumcircle(2, 2, 1)");
   ggbApplet.evalCommand("angleBisector = AngleBisector(A, B, C)");
 
   // Conic Sections
-  ggbApplet.evalCommand("Conic(A, B, C, 2)");
+  ggbApplet.evalCommand("Conic(2, 3, -1, 4, 2, -3)");
   ggbApplet.evalCommand("ellipse1 = Ellipse((1, 1), (4, 4), 3)");
 
   // Loci
@@ -61,8 +61,8 @@ function initializeFeatures() {
   ggbApplet.evalCommand("differentialSolution = NSolveODE(2*x*y' = y^2 + y)");
 
   // 3D Objects (if 3D app is used)
-  // ggbApplet.evalCommand("Point3D(1, 2, 3)");
-  // ggbApplet.evalCommand("Sphere((2,2,2), 3)");
+  ggbApplet.evalCommand("Point3D(1, 2, 3)");
+  ggbApplet.evalCommand("Sphere((2,2,2), 3)");
 
   // Set object properties
   ggbApplet.setColor("f", 0, 0, 255);

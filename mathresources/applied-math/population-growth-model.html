@@ -36,326 +36,344 @@
     </style>
   </head>
   <body>
-    <h1>Population Growth Models</h1>
-    <p>
-      Population growth models are mathematical representations used to describe
-      how populations change over time. These models are crucial in fields such
-      as biology, ecology, environmental science, economics, and demography.
-      They help predict future population sizes, understand the impact of
-      resources, and make decisions related to conservation, urban planning, and
-      resource management.
-    </p>
+    <div id="header"></div>
+    <div class="topic-header">
+      <h1>Population Growth Models</h1>
+    </div>
 
-    <h2>Basic Concepts</h2>
-    <p>Population growth models typically rely on the following factors:</p>
-    <ul>
-      <li>
-        <strong>Birth Rate (natality)</strong>: The number of births in a
-        population over a period.
-      </li>
-      <li>
-        <strong>Death Rate (mortality)</strong>: The number of deaths in a
-        population over a period.
-      </li>
-      <li>
-        <strong>Immigration</strong>: The influx of individuals into a
-        population from outside.
-      </li>
-      <li>
-        <strong>Emigration</strong>: The outflux of individuals from a
-        population to other areas.
-      </li>
-    </ul>
-    <p>
-      The difference between the birth rate and death rate gives the natural
-      increase or decrease in population size, while immigration and emigration
-      influence the overall population dynamics.
-    </p>
+    <div class="topic-content">
+      <p>
+        Population growth models are mathematical representations used to
+        describe how populations change over time. These models are crucial in
+        fields such as biology, ecology, environmental science, economics, and
+        demography. They help predict future population sizes, understand the
+        impact of resources, and make decisions related to conservation, urban
+        planning, and resource management.
+      </p>
 
-    <h2>Types of Population Growth Models</h2>
-    <ul>
-      <li>Exponential Growth Model</li>
-      <li>Logistic Growth Model</li>
-      <li>Age-Structured Models</li>
-      <li>Stochastic Models</li>
-    </ul>
+      <h2>Basic Concepts</h2>
+      <p>Population growth models typically rely on the following factors:</p>
+      <ul>
+        <li>
+          <strong>Birth Rate (natality)</strong>: The number of births in a
+          population over a period.
+        </li>
+        <li>
+          <strong>Death Rate (mortality)</strong>: The number of deaths in a
+          population over a period.
+        </li>
+        <li>
+          <strong>Immigration</strong>: The influx of individuals into a
+          population from outside.
+        </li>
+        <li>
+          <strong>Emigration</strong>: The outflux of individuals from a
+          population to other areas.
+        </li>
+      </ul>
+      <p>
+        The difference between the birth rate and death rate gives the natural
+        increase or decrease in population size, while immigration and
+        emigration influence the overall population dynamics.
+      </p>
 
-    <h3>1. Exponential Growth Model</h3>
-    <p>
-      The exponential growth model describes a population that grows without any
-      constraints. It's based on the assumption that resources (such as food,
-      space, and mates) are unlimited, and the birth and death rates are
-      constant.
-    </p>
+      <h2>Types of Population Growth Models</h2>
+      <ul>
+        <li>Exponential Growth Model</li>
+        <li>Logistic Growth Model</li>
+        <li>Age-Structured Models</li>
+        <li>Stochastic Models</li>
+      </ul>
 
-    <h4>Mathematical Representation:</h4>
-    <p>
-      The exponential growth model can be expressed using the differential
-      equation:
-    </p>
-    <div class="formula">\[ \frac{dN}{dt} = rN \]</div>
-    <p>where:</p>
-    <ul>
-      <li>\( N(t) \) is the population size at time \( t \).</li>
-      <li>
-        \( r \) is the intrinsic rate of increase (birth rate minus death rate).
-      </li>
-      <li>
-        \( \frac{dN}{dt} \) represents the rate of change of the population over
+      <h3>1. Exponential Growth Model</h3>
+      <p>
+        The exponential growth model describes a population that grows without
+        any constraints. It's based on the assumption that resources (such as
+        food, space, and mates) are unlimited, and the birth and death rates are
+        constant.
+      </p>
+
+      <h4>Mathematical Representation:</h4>
+      <p>
+        The exponential growth model can be expressed using the differential
+        equation:
+      </p>
+      <div class="formula">\[ \frac{dN}{dt} = rN \]</div>
+      <p>where:</p>
+      <ul>
+        <li>\( N(t) \) is the population size at time \( t \).</li>
+        <li>
+          \( r \) is the intrinsic rate of increase (birth rate minus death
+          rate).
+        </li>
+        <li>
+          \( \frac{dN}{dt} \) represents the rate of change of the population
+          over time.
+        </li>
+      </ul>
+
+      <h4>Solution to the Differential Equation:</h4>
+      <p>The solution to the above differential equation is:</p>
+      <div class="formula">\[ N(t) = N_0 e^{rt} \]</div>
+      <p>where:</p>
+      <ul>
+        <li>\( N_0 \) is the initial population size at time \( t = 0 \).</li>
+        <li>\( e \) is the base of the natural logarithm.</li>
+      </ul>
+      <p>
+        This equation indicates that the population grows exponentially,
+        doubling at a constant rate over time.
+      </p>
+
+      <h4>Example:</h4>
+      <p>
+        Suppose a population of bacteria doubles every hour. If the initial
+        population is 1,000 bacteria, the population after \( t \) hours can be
+        modeled by:
+      </p>
+      <div class="formula">\[ N(t) = 1000 \times 2^t \]</div>
+      <p>
+        For exponential growth, as time progresses, the population size can
+        become incredibly large, leading to unsustainable conditions if
+        resources are limited.
+      </p>
+
+      <h3>2. Logistic Growth Model</h3>
+      <p>
+        The logistic growth model accounts for environmental constraints, such
+        as limited resources, which slow down the growth as the population size
+        increases. This model is more realistic for most natural populations.
+      </p>
+
+      <h4>Mathematical Representation:</h4>
+      <p>
+        The logistic growth model is described by the differential equation:
+      </p>
+      <div class="formula">
+        \[ \frac{dN}{dt} = rN\left(1 - \frac{N}{K}\right) \]
+      </div>
+      <p>where:</p>
+      <ul>
+        <li>\( N(t) \) is the population size at time \( t \).</li>
+        <li>\( r \) is the intrinsic rate of increase.</li>
+        <li>
+          \( K \) is the carrying capacity, the maximum population size that the
+          environment can sustain.
+        </li>
+      </ul>
+
+      <h4>Solution and Behavior:</h4>
+      <p>
+        As \( N \) approaches \( K \), the growth rate \( \frac{dN}{dt} \)
+        decreases, eventually reaching zero when \( N = K \). The population
+        size stabilizes at the carrying capacity, where birth rates equal death
+        rates.
+      </p>
+
+      <h4>Example:</h4>
+      <p>
+        Consider a population of deer in a forest with a carrying capacity of
+        500 deer. The initial population is 100, and the growth rate is 0.1. The
+        logistic growth equation predicts how the population approaches 500 over
         time.
-      </li>
-    </ul>
+      </p>
 
-    <h4>Solution to the Differential Equation:</h4>
-    <p>The solution to the above differential equation is:</p>
-    <div class="formula">\[ N(t) = N_0 e^{rt} \]</div>
-    <p>where:</p>
-    <ul>
-      <li>\( N_0 \) is the initial population size at time \( t = 0 \).</li>
-      <li>\( e \) is the base of the natural logarithm.</li>
-    </ul>
-    <p>
-      This equation indicates that the population grows exponentially, doubling
-      at a constant rate over time.
-    </p>
+      <h4>Graphical Representation:</h4>
+      <p>
+        The logistic growth curve is sigmoidal (S-shaped). It starts with an
+        exponential phase, then slows down, and finally levels off as the
+        population reaches the carrying capacity.
+      </p>
 
-    <h4>Example:</h4>
-    <p>
-      Suppose a population of bacteria doubles every hour. If the initial
-      population is 1,000 bacteria, the population after \( t \) hours can be
-      modeled by:
-    </p>
-    <div class="formula">\[ N(t) = 1000 \times 2^t \]</div>
-    <p>
-      For exponential growth, as time progresses, the population size can become
-      incredibly large, leading to unsustainable conditions if resources are
-      limited.
-    </p>
+      <h3>3. Age-Structured Models</h3>
+      <p>
+        In reality, not all individuals in a population contribute equally to
+        population growth. Age-structured models consider the different survival
+        and reproduction rates of individuals at different ages. This type of
+        model is more complex and is often represented using matrices or systems
+        of differential equations.
+      </p>
 
-    <h3>2. Logistic Growth Model</h3>
-    <p>
-      The logistic growth model accounts for environmental constraints, such as
-      limited resources, which slow down the growth as the population size
-      increases. This model is more realistic for most natural populations.
-    </p>
+      <h4>Leslie Matrix Model:</h4>
+      <p>
+        One common age-structured model is the Leslie Matrix Model, which uses a
+        matrix to describe how the population is distributed among different age
+        classes. Each entry in the matrix represents the probability of an
+        individual surviving to the next age class or producing offspring.
+      </p>
 
-    <h4>Mathematical Representation:</h4>
-    <p>The logistic growth model is described by the differential equation:</p>
-    <div class="formula">
-      \[ \frac{dN}{dt} = rN\left(1 - \frac{N}{K}\right) \]
+      <h4>Example:</h4>
+      <p>
+        In human populations, age-structured models are used to predict
+        population trends by considering different age groups, such as children,
+        working adults, and the elderly. This approach is particularly useful in
+        understanding the long-term impacts of changes in birth rates, death
+        rates, and migration patterns on population structure.
+      </p>
+
+      <p><strong>Leslie Matrix Model in Detail:</strong></p>
+      <p>
+        In the Leslie Matrix Model, the population is divided into discrete age
+        classes. The model uses a matrix (Leslie matrix) to describe the
+        transitions between these classes from one time step to the next. The
+        elements of the matrix represent:
+      </p>
+      <ul>
+        <li>
+          <strong>Survival rates</strong>: The probability that an individual in
+          one age class survives to the next age class.
+        </li>
+        <li>
+          <strong>Fertility rates</strong>: The average number of offspring
+          produced by an individual in a given age class.
+        </li>
+      </ul>
+      <p>
+        For example, consider a population divided into three age classes:
+        juveniles, adults, and seniors. The Leslie matrix might look like this:
+      </p>
+      <div class="formula">
+        \[ L = \begin{pmatrix} F_1 & F_2 & F_3 \\ S_1 & 0 & 0 \\ 0 & S_2 & 0
+        \end{pmatrix} \]
+      </div>
+      <p>where:</p>
+      <ul>
+        <li>
+          \( F_1, F_2, F_3 \) are the fertility rates for juveniles, adults, and
+          seniors, respectively.
+        </li>
+        <li>\( S_1 \) is the survival rate from juveniles to adults.</li>
+        <li>\( S_2 \) is the survival rate from adults to seniors.</li>
+      </ul>
+      <p>
+        The population vector \( \mathbf{P}(t) \) represents the number of
+        individuals in each age class at time \( t \). The population at the
+        next time step is given by:
+      </p>
+      <div class="formula">\[ \mathbf{P}(t+1) = L \times \mathbf{P}(t) \]</div>
+      <p>
+        This equation can be iterated to predict the population structure over
+        time.
+      </p>
+
+      <h4>Example:</h4>
+      <p>Suppose we have a population with the following characteristics:</p>
+      <ul>
+        <li>Juvenile fertility: 0.5</li>
+        <li>Adult fertility: 1.0</li>
+        <li>Senior fertility: 0</li>
+        <li>Juvenile survival: 0.8</li>
+        <li>Adult survival: 0.6</li>
+      </ul>
+      <p>The Leslie matrix for this population would be:</p>
+      <div class="formula">
+        \[ L = \begin{pmatrix} 0.5 & 1.0 & 0 \\ 0.8 & 0 & 0 \\ 0 & 0.6 & 0
+        \end{pmatrix} \]
+      </div>
+      <p>
+        If the initial population vector is \( \mathbf{P}(0) = \begin{pmatrix}
+        100 \\ 50 \\ 30 \end{pmatrix} \), the population vector at the next time
+        step would be:
+      </p>
+      <div class="formula">
+        \[ \mathbf{P}(1) = L \times \mathbf{P}(0) = \begin{pmatrix} 0.5 & 1.0 &
+        0 \\ 0.8 & 0 & 0 \\ 0 & 0.6 & 0 \end{pmatrix} \times \begin{pmatrix} 100
+        \\ 50 \\ 30 \end{pmatrix} = \begin{pmatrix} 75 \\ 80 \\ 30 \end{pmatrix}
+        \]
+      </div>
+      <p>
+        This model provides a detailed view of how different age classes
+        contribute to the overall population dynamics.
+      </p>
+
+      <h3>4. Stochastic Models</h3>
+      <p>
+        Stochastic models incorporate random variations in population growth,
+        accounting for the fact that real-world populations are subject to
+        unpredictable events. Unlike deterministic models, which provide a
+        single outcome for population size, stochastic models predict a range of
+        possible outcomes based on probability distributions.
+      </p>
+
+      <h4>Key Features:</h4>
+      <ul>
+        <li>
+          <strong>Randomness</strong>: Stochastic models account for the
+          inherent randomness in birth rates, death rates, and other factors
+          affecting population growth.
+        </li>
+        <li>
+          <strong>Probability Distributions</strong>: These models often use
+          probability distributions (e.g., Poisson distribution for births,
+          binomial distribution for survival) to model population dynamics.
+        </li>
+        <li>
+          <strong>Realism</strong>: Stochastic models are more realistic than
+          deterministic models because they reflect the variability observed in
+          real populations.
+        </li>
+      </ul>
+
+      <h4>Example:</h4>
+      <p>
+        In a stochastic model of a small animal population, the birth rate might
+        be modeled as a Poisson process with a certain mean rate, and the
+        survival of each individual might be modeled as a Bernoulli trial with a
+        certain probability of survival. The outcome of each time step would be
+        a distribution of possible population sizes rather than a single
+        deterministic value.
+      </p>
+      <p>
+        Stochastic models are particularly important for small populations,
+        where random events can have a significant impact on population size and
+        long-term survival.
+      </p>
+
+      <h2>Applications of Population Growth Models</h2>
+      <p>
+        Population growth models are used in a variety of real-world
+        applications, including:
+      </p>
+      <ul>
+        <li>
+          <strong>Conservation Biology</strong>: To predict the population
+          trends of endangered species and assess the impact of conservation
+          strategies.
+        </li>
+        <li>
+          <strong>Epidemiology</strong>: To model the spread of diseases within
+          a population and predict future outbreaks.
+        </li>
+        <li>
+          <strong>Urban Planning</strong>: To project future population sizes in
+          cities and plan for infrastructure needs such as housing,
+          transportation, and schools.
+        </li>
+        <li>
+          <strong>Agriculture</strong>: To estimate the growth of crop
+          populations under different environmental conditions and optimize
+          resource use.
+        </li>
+        <li>
+          <strong>Economics</strong>: To analyze demographic trends and their
+          impact on labor markets, social services, and economic growth.
+        </li>
+      </ul>
+
+      <h2>Summary</h2>
+      <p>
+        Population growth models are powerful tools that help us understand how
+        populations change over time. By incorporating factors such as birth
+        rates, death rates, and resource limitations, these models provide
+        insights into the dynamics of natural and human populations. From simple
+        exponential growth to complex age-structured and stochastic models, each
+        type
+      </p>
     </div>
-    <p>where:</p>
-    <ul>
-      <li>\( N(t) \) is the population size at time \( t \).</li>
-      <li>\( r \) is the intrinsic rate of increase.</li>
-      <li>
-        \( K \) is the carrying capacity, the maximum population size that the
-        environment can sustain.
-      </li>
-    </ul>
-
-    <h4>Solution and Behavior:</h4>
-    <p>
-      As \( N \) approaches \( K \), the growth rate \( \frac{dN}{dt} \)
-      decreases, eventually reaching zero when \( N = K \). The population size
-      stabilizes at the carrying capacity, where birth rates equal death rates.
-    </p>
-
-    <h4>Example:</h4>
-    <p>
-      Consider a population of deer in a forest with a carrying capacity of 500
-      deer. The initial population is 100, and the growth rate is 0.1. The
-      logistic growth equation predicts how the population approaches 500 over
-      time.
-    </p>
-
-    <h4>Graphical Representation:</h4>
-    <p>
-      The logistic growth curve is sigmoidal (S-shaped). It starts with an
-      exponential phase, then slows down, and finally levels off as the
-      population reaches the carrying capacity.
-    </p>
-
-    <h3>3. Age-Structured Models</h3>
-    <p>
-      In reality, not all individuals in a population contribute equally to
-      population growth. Age-structured models consider the different survival
-      and reproduction rates of individuals at different ages. This type of
-      model is more complex and is often represented using matrices or systems
-      of differential equations.
-    </p>
-
-    <h4>Leslie Matrix Model:</h4>
-    <p>
-      One common age-structured model is the Leslie Matrix Model, which uses a
-      matrix to describe how the population is distributed among different age
-      classes. Each entry in the matrix represents the probability of an
-      individual surviving to the next age class or producing offspring.
-    </p>
-
-    <h4>Example:</h4>
-    <p>
-      In human populations, age-structured models are used to predict population
-      trends by considering different age groups, such as children, working
-      adults, and the elderly. This approach is particularly useful in
-      understanding the long-term impacts of changes in birth rates, death
-      rates, and migration patterns on population structure.
-    </p>
-
-    <p><strong>Leslie Matrix Model in Detail:</strong></p>
-    <p>
-      In the Leslie Matrix Model, the population is divided into discrete age
-      classes. The model uses a matrix (Leslie matrix) to describe the
-      transitions between these classes from one time step to the next. The
-      elements of the matrix represent:
-    </p>
-    <ul>
-      <li>
-        <strong>Survival rates</strong>: The probability that an individual in
-        one age class survives to the next age class.
-      </li>
-      <li>
-        <strong>Fertility rates</strong>: The average number of offspring
-        produced by an individual in a given age class.
-      </li>
-    </ul>
-    <p>
-      For example, consider a population divided into three age classes:
-      juveniles, adults, and seniors. The Leslie matrix might look like this:
-    </p>
-    <div class="formula">
-      \[ L = \begin{pmatrix} F_1 & F_2 & F_3 \\ S_1 & 0 & 0 \\ 0 & S_2 & 0
-      \end{pmatrix} \]
+    <div class="other-topics">
+      <div></div>
+      <div></div>
     </div>
-    <p>where:</p>
-    <ul>
-      <li>
-        \( F_1, F_2, F_3 \) are the fertility rates for juveniles, adults, and
-        seniors, respectively.
-      </li>
-      <li>\( S_1 \) is the survival rate from juveniles to adults.</li>
-      <li>\( S_2 \) is the survival rate from adults to seniors.</li>
-    </ul>
-    <p>
-      The population vector \( \mathbf{P}(t) \) represents the number of
-      individuals in each age class at time \( t \). The population at the next
-      time step is given by:
-    </p>
-    <div class="formula">\[ \mathbf{P}(t+1) = L \times \mathbf{P}(t) \]</div>
-    <p>
-      This equation can be iterated to predict the population structure over
-      time.
-    </p>
-
-    <h4>Example:</h4>
-    <p>Suppose we have a population with the following characteristics:</p>
-    <ul>
-      <li>Juvenile fertility: 0.5</li>
-      <li>Adult fertility: 1.0</li>
-      <li>Senior fertility: 0</li>
-      <li>Juvenile survival: 0.8</li>
-      <li>Adult survival: 0.6</li>
-    </ul>
-    <p>The Leslie matrix for this population would be:</p>
-    <div class="formula">
-      \[ L = \begin{pmatrix} 0.5 & 1.0 & 0 \\ 0.8 & 0 & 0 \\ 0 & 0.6 & 0
-      \end{pmatrix} \]
-    </div>
-    <p>
-      If the initial population vector is \( \mathbf{P}(0) = \begin{pmatrix} 100
-      \\ 50 \\ 30 \end{pmatrix} \), the population vector at the next time step
-      would be:
-    </p>
-    <div class="formula">
-      \[ \mathbf{P}(1) = L \times \mathbf{P}(0) = \begin{pmatrix} 0.5 & 1.0 & 0
-      \\ 0.8 & 0 & 0 \\ 0 & 0.6 & 0 \end{pmatrix} \times \begin{pmatrix} 100 \\
-      50 \\ 30 \end{pmatrix} = \begin{pmatrix} 75 \\ 80 \\ 30 \end{pmatrix} \]
-    </div>
-    <p>
-      This model provides a detailed view of how different age classes
-      contribute to the overall population dynamics.
-    </p>
-
-    <h3>4. Stochastic Models</h3>
-    <p>
-      Stochastic models incorporate random variations in population growth,
-      accounting for the fact that real-world populations are subject to
-      unpredictable events. Unlike deterministic models, which provide a single
-      outcome for population size, stochastic models predict a range of possible
-      outcomes based on probability distributions.
-    </p>
-
-    <h4>Key Features:</h4>
-    <ul>
-      <li>
-        <strong>Randomness</strong>: Stochastic models account for the inherent
-        randomness in birth rates, death rates, and other factors affecting
-        population growth.
-      </li>
-      <li>
-        <strong>Probability Distributions</strong>: These models often use
-        probability distributions (e.g., Poisson distribution for births,
-        binomial distribution for survival) to model population dynamics.
-      </li>
-      <li>
-        <strong>Realism</strong>: Stochastic models are more realistic than
-        deterministic models because they reflect the variability observed in
-        real populations.
-      </li>
-    </ul>
-
-    <h4>Example:</h4>
-    <p>
-      In a stochastic model of a small animal population, the birth rate might
-      be modeled as a Poisson process with a certain mean rate, and the survival
-      of each individual might be modeled as a Bernoulli trial with a certain
-      probability of survival. The outcome of each time step would be a
-      distribution of possible population sizes rather than a single
-      deterministic value.
-    </p>
-    <p>
-      Stochastic models are particularly important for small populations, where
-      random events can have a significant impact on population size and
-      long-term survival.
-    </p>
-
-    <h2>Applications of Population Growth Models</h2>
-    <p>
-      Population growth models are used in a variety of real-world applications,
-      including:
-    </p>
-    <ul>
-      <li>
-        <strong>Conservation Biology</strong>: To predict the population trends
-        of endangered species and assess the impact of conservation strategies.
-      </li>
-      <li>
-        <strong>Epidemiology</strong>: To model the spread of diseases within a
-        population and predict future outbreaks.
-      </li>
-      <li>
-        <strong>Urban Planning</strong>: To project future population sizes in
-        cities and plan for infrastructure needs such as housing,
-        transportation, and schools.
-      </li>
-      <li>
-        <strong>Agriculture</strong>: To estimate the growth of crop populations
-        under different environmental conditions and optimize resource use.
-      </li>
-      <li>
-        <strong>Economics</strong>: To analyze demographic trends and their
-        impact on labor markets, social services, and economic growth.
-      </li>
-    </ul>
-
-    <h2>Summary</h2>
-    <p>
-      Population growth models are powerful tools that help us understand how
-      populations change over time. By incorporating factors such as birth
-      rates, death rates, and resource limitations, these models provide
-      insights into the dynamics of natural and human populations. From simple
-      exponential growth to complex age-structured and stochastic models, each
-      type
-    </p>
+    <div id="footer"></div>
   </body>
 </html>

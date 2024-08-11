@@ -1,6 +1,6 @@
 // FUnction to include header and footer
 async function includeHTML() {
-  const headerResponse = await fetch("./components/nav.html");
+  const headerResponse = await fetch("./components/nav-no-link.html");
   const headerHTML = await headerResponse.text();
   document.getElementById("header").innerHTML = headerHTML;
 

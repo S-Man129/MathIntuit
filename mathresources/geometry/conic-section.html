@@ -23,15 +23,36 @@
       async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.2.2/jsxgraphcore.js"></script>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 20px;
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #333;
       }
       .formula {
         margin: 20px 0;
         text-align: center;
+      }
+      ul {
+        margin: 20px 0;
+        padding-left: 20px;
+      }
+      p,
+      li {
+        margin: 10px 0;
+      }
+
+      .box {
+        width: auto;
+        max-width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        display: block;
+        margin: auto;
+        margin-bottom: 10px;
+        border-radius: 10px;
       }
     </style>
   </head>
@@ -39,90 +60,318 @@
     <h1>Conic Sections</h1>
     <p>
       Conic sections are the curves obtained by intersecting a plane with a
-      double-napped cone. The angle of the plane relative to the cone determines
-      the shape of the intersection. The primary types of conic sections are
-      circles, ellipses, parabolas, and hyperbolas.
+      double-napped cone. Depending on the angle of the intersecting plane
+      relative to the cone, the intersection produces different shapes: circles,
+      ellipses, parabolas, and hyperbolas. These curves have significant
+      importance in mathematics, physics, engineering, and various fields of
+      science due to their unique properties and applications.
     </p>
 
-    <h2>Types of Conic Sections</h2>
+    <h2>Understanding Conic Sections</h2>
 
-    <h3>Circle</h3>
     <p>
-      A circle is formed when the plane is perpendicular to the axis of the
-      cone.
+      Imagine a double-napped cone—a cone with two parts, one extending upwards
+      and one downwards. When a plane intersects this cone at various angles and
+      positions, it creates different types of curves, known as conic sections:
     </p>
-    <div class="formula">\( (x - h)^2 + (y - k)^2 = r^2 \)</div>
-    <p>Here, \((h, k)\) is the center, and \(r\) is the radius.</p>
-
-    <h3>Ellipse</h3>
-    <p>
-      An ellipse is formed when the plane is angled such that it intersects both
-      nappes of the cone but does not pass through the apex.
-    </p>
-    <div class="formula">
-      \( \frac{(x - h)^2}{a^2} + \frac{(y - k)^2}{b^2} = 1 \)
-    </div>
-    <p>
-      Here, \((h, k)\) is the center, \(a\) is the semi-major axis, and \(b\) is
-      the semi-minor axis.
-    </p>
-
-    <h3>Parabola</h3>
-    <p>
-      A parabola is formed when the plane is parallel to a generator of the
-      cone.
-    </p>
-    <div class="formula">\( y - k = a(x - h)^2 \)</div>
-    <p>
-      Here, \((h, k)\) is the vertex, and \(a\) is a constant that determines
-      the width of the parabola.
-    </p>
-
-    <h3>Hyperbola</h3>
-    <p>
-      A hyperbola is formed when the plane intersects both nappes of the cone in
-      such a way that the angle is steeper than the angle of the cone.
-    </p>
-    <div class="formula">
-      \( \frac{(x - h)^2}{a^2} - \frac{(y - k)^2}{b^2} = 1 \)
-    </div>
-    <p>
-      Here, \((h, k)\) is the center, \(a\) is the distance between the vertices
-      and the center along the transverse axis, and \(b\) is the distance
-      between the vertices and the center along the conjugate axis.
-    </p>
-
-    <h2>Applications of Conic Sections</h2>
     <ul>
       <li>
-        <strong>Orbits of Planets</strong>: Ellipses describe the orbits of
-        planets and satellites.
+        <strong>Circle</strong>:
+        <ul>
+          <li>
+            Formed when the plane cuts the cone perpendicular to its axis.
+          </li>
+          <li>
+            All points on a circle are equidistant from a single point called
+            the center.
+          </li>
+          <li>
+            <strong>Equation</strong>: \( (x - h)^2 + (y - k)^2 = r^2 \), where
+            \((h, k)\) is the center, and \(r\) is the radius.
+          </li>
+        </ul>
       </li>
       <li>
-        <strong>Reflective Properties</strong>: Parabolas are used in the design
-        of telescopes and satellite dishes due to their reflective properties.
+        <strong>Ellipse</strong>:
+        <ul>
+          <li>
+            Formed when the plane intersects the cone at an angle, but does not
+            pass through the base of the cone.
+          </li>
+          <li>
+            An ellipse looks like a stretched circle, with two focal points. The
+            sum of the distances from any point on the ellipse to the two foci
+            is constant.
+          </li>
+          <li>
+            <strong>Equation</strong>: \( \frac{(x - h)^2}{a^2} + \frac{(y -
+            k)^2}{b^2} = 1 \), where \((h, k)\) is the center, \(a\) is the
+            semi-major axis, and \(b\) is the semi-minor axis.
+          </li>
+        </ul>
       </li>
       <li>
-        <strong>Architecture and Engineering</strong>: Hyperbolas are used in
-        structures like cooling towers and suspension bridges for their
-        structural properties.
+        <strong>Parabola</strong>:
+        <ul>
+          <li>Formed when the plane is parallel to a generator of the cone.</li>
+          <li>
+            A parabola has a single focus and a directrix. The distance from any
+            point on the parabola to the focus is equal to the distance from
+            that point to the directrix.
+          </li>
+          <li>
+            <strong>Equation</strong>: \( y - k = a(x - h)^2 \) or \( x - h =
+            a(y - k)^2 \), where \((h, k)\) is the vertex, and \(a\) is a
+            constant that determines the parabola's width.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Hyperbola</strong>:
+        <ul>
+          <li>
+            Formed when the plane intersects both nappes of the cone at an angle
+            steeper than the side of the cone.
+          </li>
+          <li>
+            A hyperbola consists of two separate curves (branches). The
+            difference in distances from any point on the hyperbola to the two
+            foci is constant.
+          </li>
+          <li>
+            <strong>Equation</strong>: \( \frac{(x - h)^2}{a^2} - \frac{(y -
+            k)^2}{b^2} = 1 \), where \((h, k)\) is the center, \(a\) is the
+            distance between the vertices and the center along the transverse
+            axis, and \(b\) is the distance from the center to the vertices
+            along the conjugate axis.
+          </li>
+        </ul>
       </li>
     </ul>
 
-    <h2>Example</h2>
+    <h2>Detailed Exploration of Each Conic Section</h2>
+
+    <h3>1. Circle</h3>
+    <ul>
+      <li>
+        <strong>Properties</strong>:
+        <ul>
+          <li>All radii of a circle are equal.</li>
+          <li>
+            The circumference of a circle is \(2\pi r\), and the area is \(\pi
+            r^2\).
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Applications</strong>:
+        <ul>
+          <li>
+            In geometry, circles represent perfect symmetry and are foundational
+            in the study of angles, arcs, and sectors.
+          </li>
+          <li>
+            In engineering, circles are used in the design of gears, wheels, and
+            circular motion paths.
+          </li>
+          <li>
+            In nature, examples include the orbits of planets (which are nearly
+            circular) and the cross-sections of cylindrical objects.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div class="box-container text-center mb-4">
+      <div id="circleBox" class="box">
+        <script src="./js/circle.js"></script>
+      </div>
+      <p>Interactive Circle: Five Circle Theorem</p>
+    </div>
+
+    <h3>2. Ellipse</h3>
+    <ul>
+      <li>
+        <strong>Properties</strong>:
+        <ul>
+          <li>
+            Ellipses have two axes: the major axis (longest diameter) and the
+            minor axis (shortest diameter).
+          </li>
+          <li>
+            The sum of the distances from any point on the ellipse to the two
+            foci is constant.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Applications</strong>:
+        <ul>
+          <li>
+            Elliptical orbits are common in astronomy. For instance, planets
+            orbit the sun in an elliptical path with the sun at one focus.
+          </li>
+          <li>
+            Ellipses are also used in architecture and engineering, such as in
+            the design of whispering galleries and elliptical archways.
+          </li>
+          <li>
+            In optics, ellipses are involved in the reflection properties of
+            mirrors and lenses.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div class="box-container text-center mb-4">
+      <div id="ellipseBox" class="box">
+        <script src="./js/ellipse.js"></script>
+      </div>
+      <p>Interactive Ellipse points</p>
+    </div>
+
+    <h3>3. Parabola</h3>
+    <ul>
+      <li>
+        <strong>Properties</strong>:
+        <ul>
+          <li>
+            The parabola has a single axis of symmetry and a vertex where the
+            curve is most sharply curved.
+          </li>
+          <li>
+            The focus lies along the axis of symmetry, and the directrix is a
+            line perpendicular to this axis.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Applications</strong>:
+        <ul>
+          <li>
+            Parabolas are widely used in physics and engineering. The path of a
+            projectile under uniform gravity is parabolic.
+          </li>
+          <li>
+            Parabolic reflectors are used in satellite dishes, car headlights,
+            and telescopes to focus light and radio waves.
+          </li>
+          <li>
+            In agriculture, parabolic irrigation systems are designed to
+            distribute water evenly over large areas.
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="box-container text-center mb-4">
+      <div id="parabolaBox" class="box">
+        <script src="./js/parabola.js"></script>
+      </div>
+      <p>Interactive Parabola</p>
+    </div>
+
+    <h3>4. Hyperbola</h3>
+    <ul>
+      <li>
+        <strong>Properties</strong>:
+        <ul>
+          <li>
+            A hyperbola consists of two branches, each of which is a mirror
+            image of the other.
+          </li>
+          <li>
+            The asymptotes of a hyperbola are straight lines that the curve
+            approaches but never touches.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Applications</strong>:
+        <ul>
+          <li>
+            In navigation and communication, hyperbolas are used in systems like
+            GPS to determine positions based on the difference in distances from
+            two fixed points.
+          </li>
+          <li>
+            In physics, hyperbolic trajectories describe the paths of objects
+            under certain forces, such as the trajectory of a spacecraft
+            escaping a planet’s gravity.
+          </li>
+          <li>
+            In economics, hyperbolas are used in cost and efficiency analysis,
+            particularly in the study of economies of scale.
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="box-container text-center mb-4">
+      <div id="hyperbolaBox" class="box">
+        <script src="./js/hyperbola.js"></script>
+      </div>
+      <p>Interactive Hyperbola</p>
+    </div>
+
+    <h2>Conic Sections through five points</h2>
+
+    <div class="box-container text-center mb-4">
+      <div id="conic5Point" class="box">
+        <script src="./js/conicPoint.js"></script>
+      </div>
+      <p>Interactive: conic sections through five points</p>
+    </div>
+
+    <h2>Conic Sections in Real-World Applications</h2>
+    <ul>
+      <li>
+        <strong>Astronomy</strong>:
+        <p>
+          Johannes Kepler used conic sections to describe the motion of planets.
+          His first law states that planets move in elliptical orbits with the
+          sun at one focus.
+        </p>
+      </li>
+      <li>
+        <strong>Architecture</strong>:
+        <p>
+          The design of arches, bridges, and domes often employs ellipses and
+          parabolas for both aesthetic and structural reasons.
+        </p>
+      </li>
+      <li>
+        <strong>Navigation</strong>:
+        <p>
+          Hyperbolic navigation systems, such as LORAN, use the properties of
+          hyperbolas to determine the location of ships and aircraft.
+        </p>
+      </li>
+      <li>
+        <strong>Art and Design</strong>:
+        <p>
+          Artists and designers frequently use conic sections to create balanced
+          and harmonious compositions, as these shapes naturally appeal to the
+          human eye.
+        </p>
+      </li>
+      <li>
+        <strong>Physics</strong>:
+        <p>
+          The principles of parabolic trajectories are applied in the design of
+          projectile paths, satellite dishes, and telescopes.
+        </p>
+      </li>
+    </ul>
+
+    <h2>Summary</h2>
     <p>
-      Find the equation of a parabola with vertex at \((1, 2)\) and focus at
-      \((1, 5)\).
+      Conic sections are fundamental shapes in mathematics with rich geometric
+      properties and diverse applications across various fields. From the simple
+      symmetry of a circle to the complex branches of a hyperbola, conic
+      sections provide critical insights into the natural world and
+      technological advancements. Understanding these shapes not only enhances
+      our knowledge of geometry but also equips us with the tools to apply this
+      knowledge in practical, real-world scenarios.
     </p>
-    <p>
-      The distance from the vertex to the focus is \( |k - k'| = 3 \). The
-      parabola opens upwards because the focus is above the vertex. The standard
-      form of the equation is:
-    </p>
-    <div class="formula">\( (x - h)^2 = 4p(y - k) \)</div>
-    <p>Here, \( (h, k) = (1, 2) \) and \( 4p = 12 \) (since \( p = 3 \)).</p>
-    <p>So, the equation is:</p>
-    <div class="formula">\( (x - 1)^2 = 12(y - 2) \)</div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

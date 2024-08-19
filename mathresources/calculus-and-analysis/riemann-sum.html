@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riemann Sum</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="./src/css/style.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/css/resources.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.3.5/jsxgraphcore.js"></script>
+    <style>
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #333;
+      }
+      .formula {
+        margin: 20px 0;
+        text-align: center;
+      }
+      ul {
+        margin: 20px 0;
+        padding-left: 20px;
+      }
+      p,
+      li {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Riemann Sum</h1>
+    <p>
+      The Riemann sum is a fundamental concept in calculus, used to approximate
+      the area under a curve or, more generally, the integral of a function over
+      an interval. Named after the German mathematician Bernhard Riemann, the
+      Riemann sum forms the basis for defining the definite integral and is
+      crucial in understanding how calculus connects discrete approximations
+      with continuous phenomena.
+    </p>
+
+    <h2>Understanding the Riemann Sum</h2>
+    <p>
+      Imagine you want to find the area under a curve, say \( f(x) \), over a
+      certain interval \([a, b]\). If the curve is simple, like a straight line,
+      you can calculate the area using basic geometry. However, if the curve is
+      irregular, finding the exact area becomes more challenging. The Riemann
+      sum provides a method to approximate this area by dividing the interval
+      into smaller subintervals, calculating the area of simple shapes (usually
+      rectangles) over each subinterval, and summing these areas.
+    </p>
+
+    <h2>The Concept</h2>
+    <p>
+      The idea behind the Riemann sum is to break down a complicated shape into
+      smaller, more manageable pieces. Here's how it works:
+    </p>
+    <ol>
+      <li>
+        <strong>Divide the Interval:</strong> Divide the interval \([a, b]\)
+        into \( n \) subintervals of equal width \( \Delta x = \frac{b - a}{n}
+        \).
+      </li>
+      <li>
+        <strong>Choose Sample Points:</strong> In each subinterval, choose a
+        sample point \( x_i^* \). The sample point can be chosen in several
+        ways, leading to different types of Riemann sums. The most common
+        methods are:
+        <ul>
+          <li>
+            <strong>Left Riemann Sum:</strong> The sample point is the left
+            endpoint of each subinterval.
+          </li>
+          <li>
+            <strong>Right Riemann Sum:</strong> The sample point is the right
+            endpoint of each subinterval.
+          </li>
+          <li>
+            <strong>Midpoint Riemann Sum:</strong> The sample point is the
+            midpoint of each subinterval.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Calculate the Area of Rectangles:</strong> For each subinterval,
+        calculate the area of the rectangle formed by the function value at the
+        sample point \( f(x_i^*) \) and the width of the subinterval \( \Delta x
+        \).
+      </li>
+      <li>
+        <strong>Sum the Areas:</strong> Add up the areas of all the rectangles
+        to obtain the Riemann sum.
+      </li>
+    </ol>
+    <p>Mathematically, the Riemann sum is expressed as:</p>
+    <div class="formula">\[ S_n = \sum_{i=1}^{n} f(x_i^*) \Delta x \]</div>
+    <p>Where:</p>
+    <ul>
+      <li>\( S_n \) is the Riemann sum.</li>
+      <li>
+        \( f(x_i^*) \) is the function value at the sample point \( x_i^* \) in
+        the \( i \)th subinterval.
+      </li>
+      <li>\( \Delta x \) is the width of each subinterval.</li>
+    </ul>
+    <p>
+      As the number of subintervals \( n \) increases (i.e., \( \Delta x \)
+      becomes smaller), the Riemann sum becomes a more accurate approximation of
+      the area under the curve. In the limit as \( n \) approaches infinity, the
+      Riemann sum converges to the exact value of the definite integral of \(
+      f(x) \) over \([a, b]\):
+    </p>
+    <div class="formula">
+      \[ \int_{a}^{b} f(x) \, dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i^*)
+      \Delta x \]
+    </div>
+
+    <h2>Types of Riemann Sums</h2>
+    <p>
+      There are several types of Riemann sums, each depending on how the sample
+      points \( x_i^* \) are chosen within the subintervals:
+    </p>
+    <ul>
+      <li>
+        <strong>Left Riemann Sum:</strong>
+        <div class="formula">
+          \[ S_n^{\text{left}} = \sum_{i=0}^{n-1} f(x_i) \Delta x \]
+        </div>
+        <p>
+          Here, \( x_i \) is the left endpoint of each subinterval. This method
+          may underestimate or overestimate the area, depending on whether the
+          function is increasing or decreasing.
+        </p>
+      </li>
+      <li>
+        <strong>Right Riemann Sum:</strong>
+        <div class="formula">
+          \[ S_n^{\text{right}} = \sum_{i=1}^{n} f(x_i) \Delta x \]
+        </div>
+        <p>
+          In this case, \( x_i \) is the right endpoint of each subinterval.
+          Like the left Riemann sum, this method can also lead to
+          underestimation or overestimation.
+        </p>
+      </li>
+      <li>
+        <strong>Midpoint Riemann Sum:</strong>
+        <div class="formula">
+          \[ S_n^{\text{mid}} = \sum_{i=1}^{n} f\left(\frac{x_{i-1} +
+          x_i}{2}\right) \Delta x \]
+        </div>
+        <p>
+          Here, the sample point is the midpoint of each subinterval. The
+          midpoint Riemann sum often provides a better approximation than the
+          left or right Riemann sum because it balances the overestimation and
+          underestimation.
+        </p>
+      </li>
+      <li>
+        <strong>Trapezoidal Sum (Trapezoidal Rule):</strong>
+        <p>
+          While not strictly a Riemann sum, the trapezoidal sum is a related
+          method that uses trapezoids instead of rectangles to approximate the
+          area:
+        </p>
+        <div class="formula">
+          \[ S_n^{\text{trap}} = \frac{\Delta x}{2} \left[ f(x_0) +
+          2\sum_{i=1}^{n-1} f(x_i) + f(x_n) \right] \]
+        </div>
+        <p>
+          This method averages the left and right Riemann sums and generally
+          provides a better approximation.
+        </p>
+      </li>
+    </ul>
+
+    <h2>Examples</h2>
+    <h3>Example 1: Left Riemann Sum</h3>
+    <p>
+      Consider the function \( f(x) = x^2 \) on the interval \([0, 2]\). Divide
+      the interval into four subintervals and use the left Riemann sum to
+      approximate the area under the curve.
+    </p>
+    <h4>1. Divide the Interval:</h4>
+    <p>
+      \( [0, 2] \) is divided into four subintervals: \( [0, 0.5], [0.5, 1], [1,
+      1.5], [1.5, 2] \).
+    </p>
+    <h4>2. Sample Points:</h4>
+    <p>The left endpoints are \( 0, 0.5, 1, 1.5 \).</p>
+    <h4>3. Calculate the Areas:</h4>
+    <div class="formula">
+      \[ S_4^{\text{left}} = f(0) \cdot 0.5 + f(0.5) \cdot 0.5 + f(1) \cdot 0.5
+      + f(1.5) \cdot 0.5 \] \[ = 0 \cdot 0.5 + 0.25 \cdot 0.5 + 1 \cdot 0.5 +
+      2.25 \cdot 0.5 = 0 + 0.125 + 0.5 + 1.125 = 1.75 \]
+    </div>
+    <p>So, the left Riemann sum gives an approximate area of 1.75.</p>
+
+    <h3>Example 2: Midpoint Riemann Sum</h3>
+    <p>
+      Using the same function \( f(x) = x^2 \) on the interval \([0, 2]\),
+      calculate the midpoint Riemann sum with four subintervals.
+    </p>
+    <h4>1. Divide the Interval:</h4>
+    <p>The same subintervals: \( [0, 0.5], [0.5, 1], [1, 1.5], [1.5, 2] \).</p>
+    <h4>2. Sample Points:</h4>
+    <p>The midpoints are \( 0.25, 0.75, 1.25, 1.75 \).</p>
+    <h4>3. Calculate the Areas:</h4>
+    <div class="formula">
+      \[ S_4^{\text{mid}} = f(0.25) \cdot 0.5 + f(0.75) \cdot 0.5 + f(1.25)
+      \cdot 0.5 + f(1.75) \cdot 0.5 \] \[ = 0.0625 \cdot 0.5 + 0.5625 \cdot 0.5
+      + 1.5625 \cdot 0.5 + 3.0625 \cdot 0.5 = 0.03125 + 0.28125 + 0.78125 +
+      1.53125 = 2.625 \]
+    </div>
+    <p>
+      The midpoint Riemann sum gives a better approximation of the area, 2.625.
+    </p>
+
+    <h2>Applications of Riemann Sums</h2>
+    <p>
+      Riemann sums are not just theoretical tools; they have practical
+      applications in many fields:
+    </p>
+    <ul>
+      <li>
+        <strong>Physics:</strong>
+        <p>
+          In physics, Riemann sums are used to approximate quantities like work,
+          energy, and electric charge, where the quantities are distributed over
+          a region and can be represented as integrals.
+        </p>
+      </li>
+      <li>
+        <strong>Economics:</strong>
+        <p>
+          In economics, Riemann sums can approximate total costs, revenues, or
+          other economic indicators over a continuous range of prices or
+          quantities.
+        </p>
+      </li>
+      <li>
+        <strong>Engineering:</strong>
+        <p>
+          Engineers use Riemann sums to approximate the area under curves that
+          represent stress, strain, or other variables in materials and
+          structures.
+        </p>
+      </li>
+      <li>
+        <strong>Computer Science:</strong>
+        <p>
+          In computer science, algorithms that involve summation or integration
+          over continuous data often use Riemann sums for approximation,
+          particularly in numerical methods.
+        </p>
+      </li>
+    </ul>
+
+    <h2>Historical Context</h2>
+    <p>
+      The concept of the Riemann sum was introduced by Bernhard Riemann in the
+      19th century as part of his broader work on integration theory. Riemann's
+      approach was revolutionary because it provided a rigorous foundation for
+      the concept of the integral, which was previously defined more intuitively
+      by earlier mathematicians like Isaac Newton and Gottfried Wilhelm Leibniz.
+    </p>
+
+    <h2>Limitations and Extensions</h2>
+    <p>While Riemann sums are powerful, they have limitations:</p>
+    <ul>
+      <li>
+        <strong>Dependence on the Partition:</strong> The accuracy of a Riemann
+        sum depends on how the interval is partitioned. Unequal partitions or
+        poor choice of sample points can lead to less accurate approximations.
+      </li>
+      <li>
+        <strong>Integrability:</strong> Not all functions are Riemann
+        integrable. Functions that are too "wild" or have too many
+        discontinuities may not be accurately approximated by Riemann sums.
+      </li>
+    </ul>
+    <p>
+      Extensions of the Riemann sum concept include the
+      <strong>Lebesgue integral</strong>, which generalizes integration to a
+      broader class of functions and measures.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      The Riemann sum is a foundational concept in calculus, offering a method
+      to approximate the area under a curve and laying the groundwork for the
+      definite integral. Whether applied in physics, economics, or engineering,
+      Riemann sums help bridge the gap between discrete approximations and
+      continuous processes. Understanding Riemann sums is essential for anyone
+      studying calculus, as they provide the stepping stones toward more
+      advanced mathematical concepts and applications.
+    </p>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

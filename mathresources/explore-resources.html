@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../src/css/style.css" />
+    <link rel="stylesheet" href="../src/css/resources.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #contentFrame {
+        display: block;
+        margin: auto;
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+        border: none;
+        overflow: hidden; /* Hide the scrollbar */
+      }
+
+      /* Allow the iframe to scroll content */
+      #contentFrame {
+        pointer-events: auto;
+        overflow-y: scroll; /* Enable vertical scrolling */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      #contentFrame::-webkit-scrollbar {
+        display: none; /* Hide scrollbar in WebKit browsers */
+      }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.3.5/jsxgraphcore.js"></script>
+
+    <title>MathIntuit - Explore Resources</title>
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <iframe id="contentFrame" class="container p-3"></iframe>
+
+    <div class="other-resources mt-3" style="background-color: #f1f1f1">
+      <div class="container py-4">
+        <div class="available-resources">
+          <h4>Other Resources</h4>
+          <div class="available-resources-list d-md-flex gap-5">
+            <div class="geometry-list">
+              <h5>Geometry</h5>
+              <div class="list">
+                <ul>
+                  <li>
+                    <a href="" data-page="./geometry/conic-section.html"
+                      >Conic section</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="special-function-list">
+              <h5>Special Function</h5>
+              <div class="list">
+                <ul>
+                  <li>
+                    <a
+                      href=""
+                      data-page="./special-functions/bessel-function.html"
+                      >Bessel function</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="calculus-analysis-list">
+              <h5>Calculus and Analysis</h5>
+              <div class="list">
+                <ul>
+                  <li>
+                    <a
+                      href=""
+                      data-page="./calculus-and-analysis/differential-equation.html"
+                      >Differential Equation</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      data-page="./calculus-and-analysis/mean-value-theorem.html"
+                      >Mean Value Theorem</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      data-page="./calculus-and-analysis/power-series-sine-cosine.html"
+                      >Power series of Sine and Cosine</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      data-page="./calculus-and-analysis/Riemann-sum.html"
+                      >Riemann sum</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="applied-math-list">
+              <h5>Applied Math</h5>
+              <div class="list">
+                <ul>
+                  <li>
+                    <a
+                      href=""
+                      data-page="./applied-math/population-growth-model.html"
+                      >Population Growth Model</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      data-page="./applied-math/lotka-voltera-model.html"
+                      >Predator Prey Model (Lotka Voltera)</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="external-resources mt-3">
+          <h4>External Resources</h4>
+          <div class="external-resources-list"></div>
+        </div>
+      </div>
+    </div>
+    <div id="get-started"></div>
+    <div id="footer"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../src/js/resourcesScript.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const page = params.get("page");
+
+        if (page) {
+          document.getElementById("contentFrame").src = page;
+        }
+
+        document.querySelectorAll(".list a").forEach((link) => {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const page = link.getAttribute("data-page");
+            document.getElementById("contentFrame").src = page;
+            // Optionally update URL for direct linking
+            history.pushState(
+              { page },
+              "",
+              `explore-resources.html?page=${encodeURIComponent(page)}`
+            );
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

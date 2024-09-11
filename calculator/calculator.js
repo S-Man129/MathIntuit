@@ -1,8 +1,8 @@
 var params = {
   appName: "suite",
   id: "ggbApplet",
-  width: 1600,
-  height: 800,
+  width: window.innerWidth,
+  height: window.innerHeight - 100,
   showToolBar: true,
   showAlgebraInput: true,
   showMenuBar: true,
@@ -16,6 +16,10 @@ var ggbApplet = new GGBApplet(params, true);
 
 window.addEventListener("load", function () {
   ggbApplet.inject("ggb-element");
+});
+
+window.addEventListener("resize", function () {
+  ggbApplet.setSize(window.innerWidth, window.innerHeight - 100); // Adjust height based on your layout
 });
 
 function initializeFeatures() {

@@ -17,92 +17,436 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <link rel="stylesheet" href="/src/css/resources.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.43/polyfill.min.js"
+      integrity="sha512-lvWiOP+aMKHllm4THsjzNleVuGOh0WGniJ3lgu/nvCbex1LlaQSxySUjAu/LTJw9FhnSL/PVYoQcckg1Q03+fQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script
       id="MathJax-script"
       async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 20px;
-      }
-      .formula {
-        margin: 20px 0;
-        text-align: center;
-      }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.3.5/jsxgraphcore.js"></script>
   </head>
   <body>
     <h1>Differential Equations</h1>
     <p>
-      A differential equation is a mathematical equation that relates a function
-      with its derivatives. Differential equations are used to model various
-      physical systems, such as motion, heat, electricity, and fluid dynamics.
-      They can describe how a quantity changes over time or space.
+      Differential equations are fundamental tools in mathematics that describe
+      how quantities change over time or space. They are equations that involve
+      a function and its derivatives, and they play a crucial role in modeling a
+      vast array of natural and engineered systems. From the motion of planets
+      to the flow of electricity in circuits, differential equations are the
+      language through which we understand and predict the behavior of complex
+      systems.
     </p>
 
-    <h2>Types of Differential Equations</h2>
-    <h3>Ordinary Differential Equations (ODEs)</h3>
+    <h2>What is a Differential Equation?</h2>
     <p>
-      Involves functions of a single variable and their derivatives. For
-      example:
-    </p>
-    <div class="formula">\( \frac{dy}{dx} = ky \)</div>
-
-    <h3>Partial Differential Equations (PDEs)</h3>
-    <p>
-      Involves functions of multiple variables and their partial derivatives.
-      For example:
+      A differential equation is an equation that relates a function \( y(x) \)
+      to its derivatives. The general form of a differential equation is:
     </p>
     <div class="formula">
-      \( \frac{\partial u}{\partial t} = c^2 \frac{\partial^2 u}{\partial x^2}
-      \)
+      \[ F\left(x, y, \frac{dy}{dx}, \frac{d^2y}{dx^2}, \dots\right) = 0 \]
     </div>
+    <p>where:</p>
+    <ul>
+      <li>
+        \( x \) is the independent variable (often representing time or space).
+      </li>
+      <li>
+        \( y(x) \) is the dependent variable (the function we are solving for).
+      </li>
+      <li>
+        \( \frac{dy}{dx} \), \( \frac{d^2y}{dx^2} \), etc., are the first,
+        second, etc., derivatives of \( y(x) \) with respect to \( x \).
+      </li>
+    </ul>
+
+    <h2>Types of Differential Equations</h2>
+    <ul>
+      <li>
+        <strong>Ordinary Differential Equations (ODEs):</strong>
+        <p>
+          These involve functions of a single variable and their derivatives.
+          For example:
+        </p>
+        <div class="formula">\[ \frac{dy}{dx} = 3x^2 \]</div>
+        <p>
+          This is a first-order ODE because it involves the first derivative of
+          \( y \).
+        </p>
+      </li>
+      <li>
+        <strong>Partial Differential Equations (PDEs):</strong>
+        <p>
+          These involve functions of multiple variables and their partial
+          derivatives. For example:
+        </p>
+        <div class="formula">
+          \[ \frac{\partial u}{\partial t} = c^2 \frac{\partial^2 u}{\partial
+          x^2} \]
+        </div>
+        <p>
+          This is the one-dimensional heat equation, a second-order PDE that
+          describes how heat diffuses through a medium.
+        </p>
+      </li>
+      <li>
+        <strong>Linear vs. Nonlinear Differential Equations:</strong>
+        <ul>
+          <li>
+            <strong>Linear:</strong> If the function and its derivatives appear
+            to the first power and are not multiplied together, the equation is
+            linear. For example:
+            <div class="formula">\[ y'' + 3y' + 2y = 0 \]</div>
+          </li>
+          <li>
+            <strong>Nonlinear:</strong> If the equation involves products or
+            powers of the function and its derivatives, it is nonlinear. For
+            example:
+            <div class="formula">\[ y'' + y^2 = 0 \]</div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Homogeneous vs. Non-Homogeneous Differential Equations:</strong>
+        <ul>
+          <li>
+            <strong>Homogeneous:</strong> A differential equation is homogeneous
+            if all the terms involve the dependent variable or its derivatives.
+            For example:
+            <div class="formula">\[ y'' - 4y = 0 \]</div>
+          </li>
+          <li>
+            <strong>Non-Homogeneous:</strong> A differential equation is
+            non-homogeneous if it includes terms that do not involve the
+            dependent variable or its derivatives. For example:
+            <div class="formula">\[ y'' - 4y = 5x \]</div>
+          </li>
+        </ul>
+      </li>
+    </ul>
 
     <h2>Solving Differential Equations</h2>
-    <h3>Separation of Variables</h3>
     <p>
-      This method involves rearranging the equation to separate the variables on
-      either side of the equation. For example:
+      The solution to a differential equation is a function (or a set of
+      functions) that satisfies the equation. Depending on the type of
+      differential equation, various methods are used to find these solutions.
     </p>
-    <div class="formula">\( \frac{dy}{dx} = ky \)</div>
-    <p>Rearrange to:</p>
-    <div class="formula">\( \frac{1}{y} dy = k dx \)</div>
+
+    <h3>1. Separation of Variables:</h3>
+    <p>
+      This method is often used for first-order ODEs. The idea is to separate
+      the variables \( x \) and \( y \) on opposite sides of the equation and
+      then integrate. For example:
+    </p>
+    <div class="formula">\[ \frac{dy}{dx} = ky \]</div>
+    <p>Separate variables:</p>
+    <div class="formula">\[ \frac{1}{y} dy = k dx \]</div>
     <p>Integrate both sides:</p>
-    <div class="formula">\( \ln|y| = kx + C \)</div>
+    <div class="formula">\[ \ln|y| = kx + C \]</div>
     <p>Solve for \( y \):</p>
-    <div class="formula">\( y = Ce^{kx} \)</div>
+    <div class="formula">\[ y = Ce^{kx} \]</div>
+    <p>Here, \( C \) is the constant of integration.</p>
 
-    <h3>Integrating Factor</h3>
+    <h3>2. Integrating Factor:</h3>
     <p>
-      Used for first-order linear ODEs of the form \( \frac{dy}{dx} + P(x)y =
-      Q(x) \). The integrating factor is \( e^{\int P(x) dx} \).
+      This method is used for first-order linear ODEs of the form \(
+      \frac{dy}{dx} + P(x)y = Q(x) \). The integrating factor \( \mu(x) \) is
+      given by:
+    </p>
+    <div class="formula">\[ \mu(x) = e^{\int P(x)dx} \]</div>
+    <p>
+      Multiply the entire differential equation by this integrating factor,
+      allowing the left-hand side to be written as a derivative of a product,
+      which can then be integrated easily.
     </p>
 
-    <h3>Characteristic Equation</h3>
+    <h3>3. Characteristic Equation:</h3>
     <p>
-      For linear differential equations with constant coefficients. For example,
-      for \( ay'' + by' + cy = 0 \), assume a solution \( y = e^{rt} \) and
-      solve the characteristic equation \( ar^2 + br + c = 0 \).
+      For linear ODEs with constant coefficients, such as \( ay'' + by' + cy = 0
+      \), one assumes a solution of the form \( y = e^{rx} \). Substituting this
+      into the differential equation yields the characteristic equation:
     </p>
+    <div class="formula">\[ ar^2 + br + c = 0 \]</div>
+    <p>
+      Solving this quadratic equation gives the roots, which in turn provide the
+      general solution.
+    </p>
+
+    <h3>4. Numerical Methods:</h3>
+    <p>
+      In many cases, especially for complex or nonlinear differential equations,
+      an exact analytical solution may not be possible. Numerical methods like
+      Euler's method, the Runge-Kutta method, and finite difference methods are
+      used to approximate the solution.
+    </p>
+
+    <h2>Applications of Differential Equations</h2>
+    <p>
+      Differential equations are ubiquitous in science and engineering. They
+      model a wide range of phenomena, from the microscopic to the cosmic scale.
+    </p>
+
+    <h3>1. Physics:</h3>
+    <ul>
+      <li>
+        <strong>Newton's Second Law of Motion:</strong> \( F = ma \) can be
+        written as a differential equation \( m \frac{d^2x}{dt^2} = F(x) \),
+        which describes the motion of an object under the influence of a force.
+      </li>
+      <li>
+        <strong>Electromagnetism:</strong> Maxwell's equations, which describe
+        the behavior of electric and magnetic fields, are a system of PDEs.
+      </li>
+    </ul>
+
+    <h3>2. Biology:</h3>
+    <ul>
+      <li>
+        <strong>Population Dynamics:</strong> The logistic growth model, \(
+        \frac{dP}{dt} = rP\left(1 - \frac{P}{K}\right) \), is a differential
+        equation that describes how populations grow in an environment with
+        limited resources.
+      </li>
+      <li>
+        <strong>Epidemiology:</strong> The SIR model, used to study the spread
+        of infectious diseases, involves a set of coupled differential equations
+        representing susceptible, infected, and recovered populations.
+      </li>
+    </ul>
+
+    <h3>3. Economics:</h3>
+    <ul>
+      <li>
+        <strong>Growth Models:</strong> The Solow-Swan growth model, which
+        describes long-term economic growth, is based on a differential equation
+        that relates the capital stock to the rate of investment and
+        depreciation.
+      </li>
+      <li>
+        <strong>Option Pricing:</strong> The Black-Scholes equation, a PDE, is
+        used to determine the price of financial derivatives.
+      </li>
+    </ul>
+
+    <h3>4. Engineering:</h3>
+    <ul>
+      <li>
+        <strong>Control Systems:</strong> The behavior of dynamic systems, such
+        as electrical circuits and mechanical systems, is often described by
+        differential equations. Engineers use these equations to design
+        controllers that ensure systems behave in a desired manner.
+      </li>
+      <li>
+        <strong>Fluid Dynamics:</strong> The Navier-Stokes equations, a set of
+        nonlinear PDEs, describe the motion of fluid substances like air and
+        water.
+      </li>
+    </ul>
 
     <h2>Example: Solving an ODE</h2>
-    <p>Solve the first-order ODE:</p>
-    <div class="formula">\( \frac{dy}{dx} = y \cos(x) \)</div>
+    <p>Display solutions of the ordinary differential equation</p>
+    <p>\( y' = f(t, y) \)</p>
+    <p>with an initial value of \( (t_0, y_0) \).</p>
+    <p>
+      It is easy to incorporate sliders: in this example, the slider name is \(
+      c\)
+    </p>
 
-    <h3>Step 1: Separate the variables</h3>
-    <div class="formula">\( \frac{1}{y} dy = \cos(x) dx \)</div>
+    <div class="box-container text-center mb-4">
+      <form class="mb-2">
+        f(t,y)=<input type="text" id="odeinput" value="(2-t)*y + c" /><input
+          type="button"
+          value="ok"
+          onclick="doIt()"
+        />
+      </form>
+      <div id="differentialEquation" class="box">
+        <script src="./js/differential.js"></script>
+      </div>
+      <p>Interactive solution of an Ordinary Differential Equation</p>
+    </div>
 
-    <h3>Step 2: Integrate both sides</h3>
-    <div class="formula">\( \int \frac{1}{y} dy = \int \cos(x) dx \)</div>
-    <div class="formula">\( \ln|y| = \sin(x) + C \)</div>
+    <h2>Historical Context</h2>
+    <p>
+      The study of differential equations dates back to the 17th century with
+      the work of mathematicians like Isaac Newton and Gottfried Wilhelm
+      Leibniz. Their development of calculus laid the groundwork for solving
+      differential equations. Over the centuries, the theory and application of
+      differential equations have expanded enormously, influencing many
+      scientific disciplines and leading to the development of entire subfields
+      within mathematics, such as dynamical systems and chaos theory.
+    </p>
 
-    <h3>Step 3: Solve for \( y \)</h3>
-    <div class="formula">\( y = e^{\sin(x) + C} \)</div>
-    <div class="formula">\( y = Ce^{\sin(x)} \)</div>
+    <h2>Advanced Topics in Differential Equations</h2>
+    <p>
+      As we delve deeper into the study of differential equations, several
+      advanced topics emerge, each with its own set of challenges and
+      applications.
+    </p>
+
+    <h3>1. Systems of Differential Equations</h3>
+    <p>
+      Many real-world problems involve multiple interacting quantities, each
+      governed by its own differential equation. These are modeled using systems
+      of differential equations, where each equation describes the rate of
+      change of one of the quantities in terms of the others.
+    </p>
+    <p>
+      <strong>Example: Predator-Prey Model (Lotka-Volterra Equations):</strong>
+    </p>
+    <div class="formula">
+      \[ \frac{dx}{dt} = \alpha x - \beta xy \]
+      <br />
+      \[ \frac{dy}{dt} = \delta xy - \gamma y \]
+    </div>
+    <p>
+      Here, \( x(t) \) represents the prey population, and \( y(t) \) represents
+      the predator population. The equations describe how the populations change
+      over time, with \( \alpha, \beta, \gamma, \) and \( \delta \) being
+      constants that reflect the interaction rates.
+    </p>
+
+    <h3>2. Nonlinear Differential Equations</h3>
+    <p>
+      Nonlinear differential equations are those in which the dependent variable
+      or its derivatives appear with exponents other than one, or are multiplied
+      together. These equations are often more difficult to solve than linear
+      ones, and their solutions can exhibit complex behaviors such as chaos.
+    </p>
+    <p><strong>Example: The Logistic Equation:</strong></p>
+    <div class="formula">
+      \[ \frac{dP}{dt} = rP\left(1 - \frac{P}{K}\right) \]
+    </div>
+    <p>
+      This is a nonlinear equation because of the \( P^2 \) term. It models
+      population growth with a carrying capacity \( K \), beyond which the
+      population cannot sustain itself.
+    </p>
+
+    <h3>3. Partial Differential Equations (PDEs)</h3>
+    <p>
+      PDEs involve partial derivatives with respect to more than one independent
+      variable. They are crucial in describing phenomena like heat conduction,
+      wave propagation, and quantum mechanics.
+    </p>
+    <p><strong>Example: The Heat Equation:</strong></p>
+    <div class="formula">
+      \[ \frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial
+      x^2} \]
+    </div>
+    <p>
+      This equation models the distribution of heat (or temperature) in a given
+      region over time. The solution to the heat equation describes how heat
+      diffuses through the medium.
+    </p>
+
+    <h3>4. Boundary Value Problems</h3>
+    <p>
+      In boundary value problems (BVPs), the solution to a differential equation
+      must satisfy certain conditions at the boundaries of the domain. These
+      problems often arise in physics and engineering, where the conditions at
+      the boundaries (e.g., the edges of a material) are crucial for determining
+      the behavior of the system.
+    </p>
+    <p><strong>Example: Vibrating String (Wave Equation):</strong></p>
+    <div class="formula">
+      \[ \frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial
+      x^2} \]
+    </div>
+    <p>
+      Here, \( u(x, t) \) describes the displacement of the string at position
+      \( x \) and time \( t \). The boundary conditions might specify that the
+      ends of the string are fixed (e.g., \( u(0, t) = u(L, t) = 0 \) for a
+      string of length \( L \)).
+    </p>
+
+    <h3>5. Numerical Methods</h3>
+    <p>
+      When an exact analytical solution to a differential equation is not
+      possible, numerical methods are employed to approximate the solution.
+      These methods are essential for solving complex differential equations
+      that arise in practical applications.
+    </p>
+    <p><strong>Common Numerical Methods:</strong></p>
+    <ul>
+      <li>
+        <strong>Euler's Method:</strong> A simple, first-order method for
+        approximating solutions to ODEs.
+      </li>
+      <li>
+        <strong>Runge-Kutta Methods:</strong> A family of more accurate,
+        higher-order methods for solving ODEs.
+      </li>
+      <li>
+        <strong>Finite Difference Methods:</strong> Used for approximating
+        solutions to PDEs by discretizing the continuous variables.
+      </li>
+    </ul>
+
+    <h3>6. Chaos and Dynamical Systems</h3>
+    <p>
+      In some cases, the solutions to nonlinear differential equations exhibit
+      sensitive dependence on initial conditions, leading to chaotic behavior.
+      This is a hallmark of dynamical systems theory, which studies how systems
+      evolve over time.
+    </p>
+    <p><strong>Example: Lorenz Attractor:</strong></p>
+    <p>
+      The Lorenz equations, a system of three nonlinear differential equations,
+      can exhibit chaotic behavior, leading to the famous "butterfly effect."
+      Small changes in initial conditions can result in vastly different
+      outcomes, making long-term prediction impossible.
+    </p>
+    <div class="formula">
+      \[ \frac{dx}{dt} = \sigma (y - x) \]
+      <br />
+      \[ \frac{dy}{dt} = x (\rho - z) - y \]
+      <br />
+      \[ \frac{dz}{dt} = xy - \beta z \]
+    </div>
+
+    <h2>Real-World Example: Climate Modeling</h2>
+    <p>
+      Climate models often involve complex systems of differential equations
+      that describe the interactions between the atmosphere, oceans, land, and
+      ice. These models are crucial for understanding and predicting climate
+      change.
+    </p>
+    <p><strong>Navier-Stokes Equations:</strong></p>
+    <p>
+      The Navier-Stokes equations, which describe the motion of fluid
+      substances, are fundamental in modeling the behavior of the atmosphere and
+      oceans. These PDEs are notoriously difficult to solve, and approximations
+      are often used in climate models.
+    </p>
+    <div class="formula">
+      \[ \rho \left( \frac{\partial \mathbf{v}}{\partial t} + (\mathbf{v} \cdot
+      \nabla) \mathbf{v} \right) = -\nabla p + \mu \nabla^2 \mathbf{v} +
+      \mathbf{f} \]
+    </div>
+    <p>
+      Here, \( \mathbf{v} \) is the velocity field of the fluid, \( p \) is the
+      pressure, \( \rho \) is the density, \( \mu \) is the viscosity, and \(
+      \mathbf{f} \) represents external forces like gravity.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      Differential equations are a powerful and essential tool in understanding
+      the world around us. They allow us to describe the dynamics of systems,
+      predict future behavior, and explore the underlying principles governing
+      natural and engineered systems. From the simplicity of a first-order ODE
+      to the complexity of chaotic systems and PDEs, differential equations form
+      the backbone of mathematical modeling in science and engineering. Their
+      applications are vast, and their study continues to be a rich and evolving
+      field of mathematics.
+    </p>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

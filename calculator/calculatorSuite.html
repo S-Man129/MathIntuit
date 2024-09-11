@@ -31,13 +31,25 @@
 
       .ggb-element {
         width: 100%;
-        max-width: auto;
-        height: 800;
+        /* max-width: 100%; */
+        height: 100%;
         margin: auto;
       }
 
       .lead {
         align-self: baseline;
+      }
+
+      @media (max-width: 768px) {
+        .ggb-element {
+          height: 400px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .ggb-element {
+          height: 300px;
+        }
       }
     </style>
     <script src="https://www.geogebra.org/apps/deployggb.js"></script>

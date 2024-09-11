@@ -17,70 +17,231 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <link rel="stylesheet" href="/src/css/resources.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.43/polyfill.min.js"
+      integrity="sha512-lvWiOP+aMKHllm4THsjzNleVuGOh0WGniJ3lgu/nvCbex1LlaQSxySUjAu/LTJw9FhnSL/PVYoQcckg1Q03+fQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script
       id="MathJax-script"
       async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 20px;
-      }
-      .formula {
-        margin: 20px 0;
-        text-align: center;
-      }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.3.5/jsxgraphcore.js"></script>
   </head>
   <body>
     <h1>Mean Value Theorem</h1>
     <p>
-      The Mean Value Theorem (MVT) is a fundamental result in calculus that
-      connects the values of a function to its derivatives. It provides a formal
-      way to understand the behavior of functions over an interval.
+      The Mean Value Theorem (MVT) is one of the cornerstone results in
+      calculus, providing a formal way to relate the average rate of change of a
+      function to its instantaneous rate of change at a specific point. This
+      theorem is widely used in mathematical analysis, optimization, physics,
+      and various other fields. The theorem not only helps in understanding the
+      behavior of functions but also lays the groundwork for more advanced
+      theorems in calculus, such as Taylor's theorem and L'Hôpital's rule.
     </p>
 
     <h2>Statement of the Mean Value Theorem</h2>
     <p>
-      If a function \( f \) is continuous on the closed interval \([a, b]\) and
-      differentiable on the open interval \((a, b)\), then there exists at least
-      one point \( c \) in \((a, b)\) such that:
+      The Mean Value Theorem states that if a function \( f(x) \) is continuous
+      on the closed interval \([a, b]\) and differentiable on the open interval
+      \((a, b)\), then there exists at least one point \( c \) in \((a, b)\)
+      such that:
     </p>
-    <div class="formula">\( f'(c) = \frac{f(b) - f(a)}{b - a} \)</div>
+    <div class="formula">\[ f'(c) = \frac{f(b) - f(a)}{b - a} \]</div>
+    <p>
+      This equation means that the derivative of the function at some point \( c
+      \) within the interval \((a, b)\) is equal to the average rate of change
+      of the function over the interval \([a, b]\).
+    </p>
+
+    <h3>Key Conditions:</h3>
+    <ul>
+      <li>
+        <strong>Continuity:</strong> The function \( f(x) \) must be continuous
+        on the closed interval \([a, b]\).
+      </li>
+      <li>
+        <strong>Differentiability:</strong> The function \( f(x) \) must be
+        differentiable on the open interval \((a, b)\).
+      </li>
+    </ul>
+
+    <h2>Intuitive Understanding</h2>
+    <p>
+      The Mean Value Theorem essentially tells us that if we draw the secant
+      line connecting the points \( (a, f(a)) \) and \( (b, f(b)) \) on the
+      graph of \( f(x) \), there will be at least one point \( c \) in the
+      interval \( (a, b) \) where the tangent to the curve is parallel to this
+      secant line. In other words, the slope of the tangent at \( c \) is equal
+      to the slope of the secant line, which represents the average rate of
+      change of the function over the interval.
+    </p>
+
+    <div class="box-container text-center mb-4">
+      <div id="meanValueTheorem" class="box">
+        <script src="./js/meanValueTheorem.js"></script>
+      </div>
+      <p>Interactive: Mean Value Theorem graph</p>
+    </div>
 
     <h2>Geometric Interpretation</h2>
     <p>
-      The MVT implies that there is at least one point where the tangent to the
-      curve is parallel to the secant line connecting the endpoints \((a,
-      f(a))\) and \((b, f(b))\).
+      To visualize the Mean Value Theorem, imagine driving a car along a
+      straight road. The total distance covered from point \( A \) to point \( B
+      \) is the difference \( f(b) - f(a) \), and the total time taken is \( b -
+      a \). The average speed over this journey is given by the average rate of
+      change:
+    </p>
+    <div class="formula">
+      \[ \text{Average Speed} = \frac{\text{Total Distance}}{\text{Total Time}}
+      = \frac{f(b) - f(a)}{b - a} \]
+    </div>
+    <p>
+      The Mean Value Theorem guarantees that there is at least one moment during
+      the journey when your instantaneous speed (as shown on the speedometer)
+      matches this average speed. This moment corresponds to the point \( c \)
+      in the theorem.
     </p>
 
-    <h2>Example: Applying the Mean Value Theorem</h2>
-    <p>Consider the function \( f(x) = x^2 \) on the interval \([1, 3]\).</p>
+    <h2>Examples</h2>
+    <h3>Example 1: Linear Function</h3>
+    <p>
+      Consider the linear function \( f(x) = 2x + 3 \) on the interval \([1,
+      4]\).
+    </p>
+    <h4>1. Calculate the Average Rate of Change:</h4>
+    <div class="formula">
+      \[ \frac{f(4) - f(1)}{4 - 1} = \frac{(2(4) + 3) - (2(1) + 3)}{4 - 1} =
+      \frac{11 - 5}{3} = 2 \]
+    </div>
+    <h4>2. Find the Derivative:</h4>
+    <div class="formula">\[ f'(x) = 2 \]</div>
+    <p>
+      Since the function is linear, the derivative is constant and equal to the
+      average rate of change. Therefore, every point \( c \) in the interval \(
+      (1, 4) \) satisfies the Mean Value Theorem.
+    </p>
 
-    <h3>Step 1: Check the conditions</h3>
+    <h3>Example 2: Non-Linear Function</h3>
+    <p>Consider the function \( f(x) = x^2 \) on the interval \([1, 3]\).</p>
+    <h4>1. Calculate the Average Rate of Change:</h4>
+    <div class="formula">
+      \[ \frac{f(3) - f(1)}{3 - 1} = \frac{(3^2) - (1^2)}{3 - 1} = \frac{9 -
+      1}{2} = 4 \]
+    </div>
+    <h4>2. Find the Derivative:</h4>
+    <div class="formula">\[ f'(x) = 2x \]</div>
+    <p>Set \( f'(c) = 4 \) to find \( c \):</p>
+    <div class="formula">\[ 2c = 4 \quad \Rightarrow \quad c = 2 \]</div>
+    <p>
+      So, at \( c = 2 \), the instantaneous rate of change (which is \( f'(c) =
+      4 \)) equals the average rate of change over the interval \([1, 3]\).
+    </p>
+
+    <h2>Applications of the Mean Value Theorem</h2>
+    <p>
+      The Mean Value Theorem has numerous applications in both theoretical and
+      applied mathematics:
+    </p>
     <ul>
-      <li>The function \( f(x) = x^2 \) is continuous on \([1, 3]\).</li>
-      <li>The function \( f(x) = x^2 \) is differentiable on \((1, 3)\).</li>
+      <li>
+        <strong
+          >Establishing the Increasing or Decreasing Nature of
+          Functions:</strong
+        >
+        <p>
+          If \( f'(x) > 0 \) for all \( x \) in an interval, then \( f(x) \) is
+          increasing on that interval. If \( f'(x) < 0 \), then \( f(x) \) is
+          decreasing. The MVT helps in proving these properties.
+        </p>
+      </li>
+      <li>
+        <strong>Error Estimation:</strong>
+        <p>
+          In numerical methods, the Mean Value Theorem is used to estimate the
+          error in approximations of functions by polynomials, such as in Taylor
+          series expansions.
+        </p>
+      </li>
+      <li>
+        <strong>Root-Finding Algorithms:</strong>
+        <p>
+          The Mean Value Theorem underlies the logic of certain root-finding
+          algorithms like the bisection method and Newton's method, providing
+          guarantees about the existence and location of roots.
+        </p>
+      </li>
+      <li>
+        <strong>Physics:</strong>
+        <p>
+          In physics, the MVT is used to describe motion and to relate average
+          quantities (like average velocity) to instantaneous values.
+        </p>
+      </li>
+      <li>
+        <strong>Economics:</strong>
+        <p>
+          In economics, the Mean Value Theorem is used to analyze the behavior
+          of cost functions, demand functions, and other economic models,
+          helping to understand marginal changes.
+        </p>
+      </li>
     </ul>
 
-    <h3>Step 2: Calculate the average rate of change</h3>
-    <div class="formula">
-      \( \frac{f(3) - f(1)}{3 - 1} = \frac{9 - 1}{2} = 4 \)
-    </div>
+    <h2>Generalizations and Related Theorems</h2>
+    <p>The Mean Value Theorem can be generalized in several ways:</p>
+    <ul>
+      <li>
+        <strong>Rolle's Theorem:</strong>
+        <p>
+          Rolle's Theorem is a special case of the Mean Value Theorem. It states
+          that if \( f(a) = f(b) \), then there exists a point \( c \) in \( (a,
+          b) \) such that \( f'(c) = 0 \). This theorem is useful in proving the
+          existence of roots within an interval.
+        </p>
+        <div class="box-container text-center mb-4">
+          <div id="rollesTheorem" class="box">
+            <script src="./js/rolles.js"></script>
+          </div>
+          <p>Interactive: Visualizing Rolle's Theorem</p>
+        </div>
+      </li>
+      <li>
+        <strong>Cauchy's Mean Value Theorem:</strong>
+        <p>
+          Cauchy's Mean Value Theorem generalizes the MVT for two functions. It
+          states that if functions \( f(x) \) and \( g(x) \) are continuous on
+          \([a, b]\) and differentiable on \((a, b)\), then there exists a point
+          \( c \) in \( (a, b) \) such that:
+        </p>
+        <div class="formula">
+          \[ \frac{f'(c)}{g'(c)} = \frac{f(b) - f(a)}{g(b) - g(a)} \]
+        </div>
+        <p>This is particularly useful in deriving L'Hôpital's rule.</p>
+      </li>
+      <li>
+        <strong>Lagrange's Mean Value Theorem:</strong>
+        <p>
+          Another generalization, Lagrange's Mean Value Theorem, applies to
+          vector-valued functions and is used in multivariable calculus.
+        </p>
+      </li>
+    </ul>
 
-    <h3>Step 3: Find \( c \) such that \( f'(c) = 4 \)</h3>
-    <div class="formula">\( f'(x) = 2x \)</div>
-    <div class="formula">\( 2c = 4 \)</div>
-    <div class="formula">\( c = 2 \)</div>
-
+    <h2>Summary</h2>
     <p>
-      So, at \( c = 2 \), the instantaneous rate of change equals the average
-      rate of change over the interval \([1, 3]\).
+      The Mean Value Theorem is a powerful result in calculus, providing a
+      bridge between the average rate of change of a function over an interval
+      and its instantaneous rate of change at a specific point within that
+      interval. With applications ranging from physics to economics, the MVT is
+      a versatile tool in both theoretical and applied mathematics. It not only
+      deepens our understanding of the behavior of functions but also serves as
+      a foundation for more advanced concepts and theorems in calculus.
     </p>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

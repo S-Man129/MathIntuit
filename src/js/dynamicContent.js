@@ -13,13 +13,31 @@ const contentData = {
     content:
       "Explore intuitive and interactive resources for learning and practicing geometry, perfect for both lecturers and students.",
     image: "../../asset/course-icon-images/geometry.jpg",
+    cardData: [
+      {
+        topicTitle: "Conic Section: Ellipse, Parabola and Hyperbola",
+        topicText:
+          "Explore Ellipse, Parabola and Hyperbola in this engaging math module.",
+        imgSrc: "../../asset/math-images/geometry-animation.gif",
+        topicLink: "./geometry/conic-section.html",
+      },
+    ],
   },
-  measurement: {
-    title: "Learn Measurement - MathIntuit Math Resources",
-    heading: "Measurement",
+  specialFunctions: {
+    title: "Learn Special Functions - MathIntuit Math Resources",
+    heading: "Special Functions",
     content:
-      "Explore intuitive and interactive resources for learning and practicing measurement, perfect for both lecturers and students.",
+      "Explore intuitive and interactive resources for learning and practicing Special Functions like Bessel Functions etc, perfect for both lecturers and students.",
     image: "../../asset/course-icon-images/measurement.jpg",
+    cardData: [
+      {
+        topicTitle: "Bessel Function: First and Second kind",
+        topicText:
+          "Explore the Bessel Function of First kind and Second kind in this engaging math module.",
+        imgSrc: "math-image-1.jpg",
+        topicLink: "./special-functions/bessel-function.html",
+      },
+    ],
   },
   trigonometry: {
     title: "Learn Trigonometry - MathIntuit Math Resources",
@@ -33,7 +51,37 @@ const contentData = {
     heading: "Calculus and Analysis",
     content:
       "Explore intuitive and interactive resources for learning and practicing calculus and analysis, perfect for both lecturers and students.",
-    image: "../../asset/course-icon-images/calculus.jpg",
+    image: "../../asset/course-icon-images/analysis.jpg",
+    cardData: [
+      {
+        topicTitle: "Calculus: Differential Equation",
+        topicText:
+          "Explore Differential equation in this engaging math module.",
+        imgSrc: "../../asset/math-images/math-animation1.gif",
+        topicLink: "./calculus-and-analysis/differential-equation.html",
+      },
+      {
+        topicTitle: "Analysis: Mean Value Theorem",
+        topicText:
+          "Understand the Mean Value Theorem with easy-to-follow examples.",
+        imgSrc: "../../asset/math-images/math-animation2.gif",
+        topicLink: "./calculus-and-analysis/mean-value-theorem.html",
+      },
+      {
+        topicTitle: "Calculus: Power Series",
+        topicText:
+          "Explore Power Series of Sine and Cosine in this engaging math module.",
+        imgSrc: "math-image-1.jpg",
+        topicLink: "./calculus-and-analysis/power-series-sine-cosine.html",
+      },
+      {
+        topicTitle: "Calculus: Riemann Sum",
+        topicText:
+          "Explore Riemann Sum with interactive visuals in this engaging math module.",
+        imgSrc: "math-image-1.jpg",
+        topicLink: "./calculus-and-analysis/riemann-sum.html",
+      },
+    ],
   },
   appliedMath: {
     title: "Learn Math Application - MathIntuit Math Resources",
@@ -41,8 +89,54 @@ const contentData = {
     content:
       "Explore intuitive and interactive resources for learning and practicing how mathematics is applied in real life scenarios, perfect for both lecturers and students.",
     image: "../../asset/course-icon-images/applied-math.jpg",
+    cardData: [
+      {
+        topicTitle: "Applied: Population Growth",
+        topicText:
+          "Explore population growth models in this engaging math module.",
+        imgSrc: "math-image-1.jpg",
+        topicLink: "./applied-math/population-growth-model.html",
+      },
+      {
+        topicTitle: "Applied: Lokta Voltera",
+        topicText:
+          "Understand the Lokta Voltera Predator Prey Model with easy-to-follow examples.",
+        imgSrc: "math-image-2.jpg",
+        topicLink: "./applied-math/lotka-voltera-model.html",
+      },
+    ],
   },
 };
+
+// Function to generate a card's HTML
+function generateCard(card) {
+  return `
+  <div class="col-12 col-lg-6">
+      <div class="card mb-3">
+          <div class="row g-0">
+              <div class="col-md-4">
+                  <img src="${
+                    card.imgSrc
+                  }" class="img-fluid rounded-start h-100" alt="${
+    card.topicTitle
+  }">
+              </div>
+              <div class="col-md-8">
+                  <div class="card-body">
+                      <h5 class="card-title">${card.topicTitle}</h5>
+                      <p class="card-text">${card.topicText}</p>
+                      <div class="d-flex flex-column align-items-end">
+                          <a href="explore-resources.html?page=${encodeURIComponent(
+                            card.topicLink
+                          )}" class="btn btn-outline-secondary px-4 py-2">Explore</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  `;
+}
 
 function loadContent(topic) {
   if (contentData[topic]) {
@@ -56,11 +150,21 @@ function loadContent(topic) {
     document.getElementById("topic-explore-heading").innerText =
       contentData[topic].heading;
     document.getElementById("topic-image").src = contentData[topic].image;
+    const cardContainer = document.getElementById("cardContainer");
+    if (contentData[topic].cardData) {
+      cardContainer.innerHTML = contentData[topic].cardData
+        .map(generateCard)
+        .join("");
+    } else {
+      cardContainer.innerHTML = `<h2 class="text-center">Content not available yet</h2>`;
+    }
+
     history.pushState(
       { topic },
       contentData[topic].title,
       `index-resources.html?topic=${topic}`
     );
+
     document.querySelectorAll(".resources-button-group a").forEach((link) => {
       link.classList.remove("selected");
       link.disabled = false;
@@ -87,8 +191,4 @@ document.addEventListener("DOMContentLoaded", () => {
       loadContent(topic);
     });
   });
-
-  // document.querySelectorAll(".navbar-brand").forEach((brand) => {
-  //   brand.href = "index.html";
-  // }); // Ensure the navbrand points to the index page
 });

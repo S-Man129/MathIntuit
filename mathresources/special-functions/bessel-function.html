@@ -10,99 +10,281 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <!-- <link rel="stylesheet" href="./src/css/style.css" /> -->
+    <link rel="stylesheet" href="/src/css/resources.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.43/polyfill.min.js"
+      integrity="sha512-lvWiOP+aMKHllm4THsjzNleVuGOh0WGniJ3lgu/nvCbex1LlaQSxySUjAu/LTJw9FhnSL/PVYoQcckg1Q03+fQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script
       id="MathJax-script"
       async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 20px;
-      }
-      .formula {
-        margin: 20px 0;
-        text-align: center;
-      }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.3.5/jsxgraphcore.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/paulmasson/mathcell@1.7.0/build/mathcell.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js"></script>
   </head>
   <body>
-    <h1>Bessel Function</h1>
+    <script src="https://paulmasson.github.io/mathcell/build/mathcell.js"></script>
+    <script src="https://paulmasson.github.io/math/build/math.js"></script>
+    <h1>Bessel Functions</h1>
     <p>
-      Bessel functions are canonical solutions to Bessel's differential
-      equation:
-    </p>
-    <div class="formula">
-      \( x^2 \frac{d^2 y}{dx^2} + x \frac{dy}{dx} + (x^2 - n^2)y = 0 \)
-    </div>
-    <p>
-      where \( n \) is a real number, often an integer. These functions are
-      named after Friedrich Bessel and are essential in many fields such as wave
-      propagation, static potentials, and quantum mechanics.
+      Bessel functions are a family of solutions to Bessel's differential
+      equation, which appears in a wide range of physical problems, particularly
+      those involving cylindrical or spherical symmetry. Named after the German
+      mathematician Friedrich Bessel, these functions play a crucial role in
+      fields such as physics, engineering, and applied mathematics. Bessel
+      functions describe wave propagation, heat conduction, and vibrations in
+      cylindrical objects, making them indispensable in the study of phenomena
+      like electromagnetic waves, fluid dynamics, and mechanical vibrations.
     </p>
 
-    <h2>Types of Bessel Functions</h2>
-    <h3>Bessel Functions of the First Kind \( J_n(x) \)</h3>
+    <h2>Bessel's Differential Equation</h2>
     <p>
-      These are solutions to Bessel's equation that are finite at \( x = 0 \)
-      for non-negative integers \( n \).
+      Bessel's differential equation is a second-order linear differential
+      equation of the form:
     </p>
     <div class="formula">
-      \( J_n(x) = \sum_{m=0}^{\infty} \frac{(-1)^m}{m! \, \Gamma(m+n+1)} \left(
-      \frac{x}{2} \right)^{2m+n} \)
+      \[ x^2 \frac{d^2 y}{dx^2} + x \frac{dy}{dx} + (x^2 - n^2)y = 0 \]
     </div>
-    <p>For example:</p>
-    <div class="formula">
-      \( J_0(x) = \sum_{m=0}^{\infty} \frac{(-1)^m}{(m!)^2} \left( \frac{x}{2}
-      \right)^{2m} \)
-    </div>
-
-    <h3>Bessel Functions of the Second Kind \( Y_n(x) \)</h3>
+    <p>Here:</p>
+    <ul>
+      <li>\( x \) is the independent variable.</li>
+      <li>\( y(x) \) is the function to be determined.</li>
+      <li>\( n \) is a constant, known as the order of the Bessel function.</li>
+    </ul>
     <p>
-      These are solutions to Bessel's equation that have a singularity at \( x =
-      0 \). They are also known as Neumann functions or Weber functions.
+      The solutions to this equation are called Bessel functions. There are two
+      main types of Bessel functions: Bessel functions of the first kind (\(
+      J_n(x) \)) and Bessel functions of the second kind (\( Y_n(x) \)).
     </p>
-    <p>For non-negative integers \( n \):</p>
-    <div class="formula">
-      \( Y_n(x) = \frac{J_n(x) \cos(n\pi) - J_{-n}(x)}{\sin(n\pi)} \)
-    </div>
 
-    <h2>Applications of Bessel Functions</h2>
+    <h2>Bessel Functions of the First Kind: \( J_n(x) \)</h2>
+    <p>
+      Bessel functions of the first kind, denoted by \( J_n(x) \), are the most
+      commonly used Bessel functions. They are particularly important when
+      dealing with boundary conditions that are finite at the origin (i.e., when
+      \( x = 0 \)).
+    </p>
+
+    <h3>Series Representation:</h3>
+    <p>
+      The Bessel function of the first kind of order \( n \) can be represented
+      by an infinite series:
+    </p>
+    <div class="formula">
+      \[ J_n(x) = \sum_{m=0}^{\infty} \frac{(-1)^m}{m! \, \Gamma(m+n+1)}
+      \left(\frac{x}{2}\right)^{2m+n} \]
+    </div>
+    <p>
+      Where \( \Gamma(z) \) is the gamma function, which generalizes the
+      factorial function.
+    </p>
+
+    <h3>Properties:</h3>
     <ul>
       <li>
-        <strong>Electromagnetic Waves</strong>: Bessel functions appear in the
-        solutions of the wave equation in cylindrical coordinates.
+        <strong>Orthogonality:</strong> Bessel functions of different orders are
+        orthogonal over certain intervals, which makes them useful in solving
+        problems with cylindrical symmetry.
       </li>
       <li>
-        <strong>Heat Conduction</strong>: They describe the radial part of the
-        temperature distribution in a cylindrical object.
-      </li>
-      <li>
-        <strong>Vibrations</strong>: They are used to model vibrations of
-        circular membranes.
+        <strong>Oscillatory Nature:</strong> For large values of \( x \), \(
+        J_n(x) \) behaves like a damped oscillatory function, similar to a sine
+        or cosine wave, but with an amplitude that decreases as \( x \)
+        increases.
       </li>
     </ul>
 
-    <h2>Example</h2>
-    <p>Consider solving the differential equation:</p>
-    <div class="formula">
-      \( x^2 \frac{d^2 y}{dx^2} + x \frac{dy}{dx} + (x^2 - 4)y = 0 \)
-    </div>
-    <p>This corresponds to \( n = 2 \). The general solution is:</p>
-    <div class="formula">\( y(x) = A J_2(x) + B Y_2(x) \)</div>
+    <h3>Example:</h3>
     <p>
-      where \( J_2(x) \) and \( Y_2(x) \) are Bessel functions of the first and
-      second kind, respectively, and \( A \) and \( B \) are constants
-      determined by boundary conditions.
+      Consider the vibration of a circular drum membrane. The displacement of
+      the membrane can be described by a Bessel function of the first kind. The
+      function \( J_0(x) \), where \( x \) is proportional to the radial
+      distance from the center of the drum, describes the shape of the membrane
+      as it vibrates.
+    </p>
+
+    <h2>Bessel Functions of the Second Kind: \( Y_n(x) \)</h2>
+    <p>
+      Bessel functions of the second kind, denoted by \( Y_n(x) \), are also
+      solutions to Bessel's differential equation. Unlike \( J_n(x) \), these
+      functions are singular at the origin (i.e., they tend to infinity as \( x
+      \) approaches zero).
+    </p>
+
+    <h3>Series Representation:</h3>
+    <p>
+      The Bessel function of the second kind of order \( n \) can be represented
+      as:
+    </p>
+    <div class="formula">
+      \[ Y_n(x) = \frac{J_n(x) \cos(n\pi) - J_{-n}(x)}{\sin(n\pi)} \]
+    </div>
+    <p>
+      For non-integer \( n \), this expression simplifies, but for integer
+      orders, \( Y_n(x) \) can also be defined using a logarithmic term in
+      addition to the series.
+    </p>
+
+    <h3>Properties:</h3>
+    <ul>
+      <li>
+        <strong>Singularity at the Origin:</strong> \( Y_n(x) \) tends to
+        infinity as \( x \) approaches zero, making it useful in problems where
+        a singular behavior at the origin is required.
+      </li>
+      <li>
+        <strong>Oscillatory Behavior:</strong> Like \( J_n(x) \), \( Y_n(x) \)
+        also exhibits oscillatory behavior for large \( x \), but with a
+        different phase shift.
+      </li>
+    </ul>
+
+    <h3>Example:</h3>
+    <p>
+      In problems involving wave propagation in cylindrical coordinates,
+      particularly when dealing with standing waves in a hollow cylinder, \(
+      Y_n(x) \) often appears as part of the general solution, particularly when
+      the boundary condition involves a singularity at the origin.
+    </p>
+
+    <h4>Graphical Representation:</h4>
+    <p>
+      Bessel functions of the first kind or second kind for both positive (blue)
+      and negative (red) real order n:
+    </p>
+    <div class="box-container text-center mb-4">
+      <div id="mathcell" class="mathcell box">
+        <script src="./js/besselFunction.js"></script>
+      </div>
+      <p>Visualizing Bessel Function of the First Kind and Second Kind</p>
+    </div>
+    <p>
+      This allows one to see explicitly that the two functions are linearly
+      dependent for integer order, either coinciding for even order or being
+      mirror images for odd order. It also allows one to see the relative
+      location of the zeros of the two functions.
+    </p>
+
+    <h2>Modified Bessel Functions</h2>
+    <p>
+      In addition to the standard Bessel functions, there are also modified
+      Bessel functions of the first kind (\( I_n(x) \)) and second kind (\(
+      K_n(x) \)). These functions are solutions to the modified Bessel equation:
+    </p>
+    <div class="formula">
+      \[ x^2 \frac{d^2 y}{dx^2} + x \frac{dy}{dx} - (x^2 + n^2)y = 0 \]
+    </div>
+    <ul>
+      <li>
+        <strong
+          >Modified Bessel Function of the First Kind: \( I_n(x) \):</strong
+        >
+        This function is used in problems with exponential growth, such as
+        diffusion processes in cylindrical geometries. Unlike \( J_n(x) \), \(
+        I_n(x) \) grows exponentially as \( x \) increases.
+      </li>
+      <li>
+        <strong
+          >Modified Bessel Function of the Second Kind: \( K_n(x) \):</strong
+        >
+        This function tends to zero exponentially as \( x \) increases and is
+        used in problems where the solution must decay at infinity.
+      </li>
+    </ul>
+
+    <h2>Applications of Bessel Functions</h2>
+    <p>
+      Bessel functions appear in a wide variety of physical and engineering
+      contexts:
+    </p>
+    <ul>
+      <li>
+        <strong>Electromagnetic Waves:</strong>
+        <p>
+          Bessel functions describe the radial component of the electromagnetic
+          field in cylindrical waveguides and optical fibers, where the symmetry
+          of the problem requires a solution to Bessel's differential equation.
+        </p>
+      </li>
+      <li>
+        <strong>Heat Conduction:</strong>
+        <p>
+          In problems involving heat conduction in cylindrical objects (such as
+          a long, thin rod), the temperature distribution is governed by Bessel
+          functions.
+        </p>
+      </li>
+      <li>
+        <strong>Vibrations:</strong>
+        <p>
+          The study of vibrations in circular membranes (such as drumheads) uses
+          Bessel functions to describe the modes of vibration. The zeros of \(
+          J_n(x) \) correspond to the resonance frequencies of the membrane.
+        </p>
+      </li>
+      <li>
+        <strong>Quantum Mechanics:</strong>
+        <p>
+          Bessel functions are used in solving the Schrödinger equation for
+          particles in cylindrical or spherical potentials, such as the hydrogen
+          atom or cylindrical quantum dots.
+        </p>
+      </li>
+      <li>
+        <strong>Acoustics:</strong>
+        <p>
+          Bessel functions are used to model sound waves in cylindrical
+          structures, such as in the design of loudspeakers and acoustic
+          waveguides.
+        </p>
+      </li>
+    </ul>
+
+    <h2>Visualization and Interpretation</h2>
+    <p>
+      Visualizing Bessel functions can provide insight into their behavior. The
+      function \( J_0(x) \) starts at 1 when \( x = 0 \) and oscillates with
+      decreasing amplitude as \( x \) increases. The functions \( J_1(x) \) and
+      higher orders start at zero and also exhibit oscillatory behavior, but
+      with a phase shift relative to \( J_0(x) \).
+    </p>
+    <p>
+      The zeros of Bessel functions are particularly important in applications.
+      For instance, the points where \( J_0(x) \) crosses zero correspond to the
+      nodal lines in the vibration of a circular membrane.
+    </p>
+
+    <h2>Historical Context</h2>
+    <p>
+      Bessel functions were first introduced by Friedrich Bessel in the early
+      19th century during his study of planetary motion. Since then, they have
+      been extensively studied and applied in various scientific fields. Their
+      properties, including their series representations, orthogonality, and
+      relationship to other special functions, have been thoroughly explored,
+      making them a key part of the mathematical toolkit for solving
+      differential equations with cylindrical or spherical symmetry.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      Bessel functions are an essential class of special functions that arise in
+      the solutions to Bessel's differential equation. Whether dealing with wave
+      propagation, heat conduction, vibrations, or quantum mechanics, Bessel
+      functions provide the mathematical framework needed to solve problems with
+      cylindrical or spherical symmetry. Their oscillatory nature,
+      orthogonality, and the presence of zeros make them invaluable in both
+      theoretical and applied mathematics, as well as in engineering and the
+      physical sciences.
     </p>
 
     <script

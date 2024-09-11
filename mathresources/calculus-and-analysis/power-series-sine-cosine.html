@@ -17,118 +17,216 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <link rel="stylesheet" href="/src/css/resources.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.43/polyfill.min.js"
+      integrity="sha512-lvWiOP+aMKHllm4THsjzNleVuGOh0WGniJ3lgu/nvCbex1LlaQSxySUjAu/LTJw9FhnSL/PVYoQcckg1Q03+fQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script
       id="MathJax-script"
       async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 20px;
-      }
-      .formula {
-        margin: 20px 0;
-        text-align: center;
-      }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.3.5/jsxgraphcore.js"></script>
   </head>
   <body>
     <h1>Power Series of Sine and Cosine</h1>
     <p>
-      The power series for sine and cosine functions are derived from their
-      Taylor series expansions around \( x = 0 \) (also known as Maclaurin
-      series).
+      The power series for the sine and cosine functions are among the most
+      fundamental tools in calculus and mathematical analysis. These series
+      expansions allow us to express trigonometric functions as infinite sums of
+      polynomial terms. This is particularly useful for approximating these
+      functions, solving differential equations, and in various applications
+      across physics, engineering, and other fields of science.
     </p>
 
-    <h2>Sine Function</h2>
-    <p>
-      The Taylor series expansion of the sine function around \( x = 0 \) is
-      given by:
-    </p>
+    <h2>What is a Power Series?</h2>
+    <p>A power series is an infinite series of the form:</p>
     <div class="formula">
-      \( \sin(x) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!} \)
+      \[ f(x) = \sum_{n=0}^{\infty} a_n x^n = a_0 + a_1x + a_2x^2 + a_3x^3 +
+      \cdots \]
     </div>
     <p>
-      This series alternates in sign and includes only the odd powers of \( x
-      \). The factorial in the denominator ensures the terms decrease in
-      magnitude as \( n \) increases.
+      where \( a_n \) represents the coefficients of the series, and \( x \) is
+      the variable. Power series can represent a wide variety of functions
+      within a certain interval of convergence.
     </p>
-    <p>Explicitly, the series looks like:</p>
+
+    <h2>Power Series of the Sine Function</h2>
+    <p>
+      The sine function can be expressed as a power series using its Taylor
+      series expansion around \( x = 0 \) (Maclaurin series):
+    </p>
     <div class="formula">
-      \( \sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots
-      \)
+      \[ \sin(x) = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!} x^{2n+1} \]
     </div>
-    <p>Here's the breakdown of the first few terms:</p>
+    <p>
+      This series alternates in sign, and only odd powers of \( x \) appear in
+      the expansion. The general term is:
+    </p>
+    <div class="formula">\[ \frac{(-1)^n}{(2n+1)!} x^{2n+1} \]</div>
+
+    <div class="box-container text-center mb-4">
+      <div id="powerSeriesSine" class="box">
+        <script src="./js/powerSeriesSine.js"></script>
+      </div>
+      <p>Visualizing the Power Series of Sine</p>
+    </div>
+
+    <h3>Expanded Form:</h3>
+    <div class="formula">
+      \[ \sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots
+      \]
+    </div>
+    <p>Where:</p>
     <ul>
-      <li>First term: \( x \)</li>
-      <li>Second term: \( -\frac{x^3}{6} \) (since \( 3! = 6 \))</li>
-      <li>Third term: \( \frac{x^5}{120} \) (since \( 5! = 120 \))</li>
+      <li>\( x^3/3! \) is the third-degree term, with \( 3! = 6 \).</li>
+      <li>\( x^5/5! \) is the fifth-degree term, with \( 5! = 120 \).</li>
     </ul>
+
+    <h3>Convergence:</h3>
+    <p>
+      The sine power series converges for all real values of \( x \). However,
+      the convergence is faster for values of \( x \) near zero, making the
+      series particularly useful for small angles.
+    </p>
 
     <h3>Example: Approximating \(\sin(x)\)</h3>
-    <p>To approximate \(\sin(0.5)\) using the first three terms:</p>
+    <p>To approximate \(\sin(0.5)\) using the first few terms of the series:</p>
     <div class="formula">
-      \( \sin(0.5) \approx 0.5 - \frac{0.5^3}{6} + \frac{0.5^5}{120} \)
+      \[ \sin(0.5) \approx 0.5 - \frac{0.5^3}{6} + \frac{0.5^5}{120} \] \[
+      \sin(0.5) \approx 0.5 - 0.0208333 + 0.0002604 \] \[ \sin(0.5) \approx
+      0.4794271 \]
     </div>
-    <div class="formula">\( \approx 0.5 - 0.0208333 + 0.0002604 \)</div>
-    <div class="formula">\( \approx 0.4794271 \)</div>
+    <p>
+      This approximation is very close to the actual value of \( \sin(0.5) \),
+      which is about 0.4794255.
+    </p>
 
-    <h2>Cosine Function</h2>
+    <h2>Power Series of the Cosine Function</h2>
     <p>
-      The Taylor series expansion of the cosine function around \( x = 0 \) is
-      given by:
+      The cosine function also has a power series representation, derived from
+      its Taylor series expansion around \( x = 0 \):
     </p>
     <div class="formula">
-      \( \cos(x) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!} \)
+      \[ \cos(x) = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!} x^{2n} \]
     </div>
     <p>
-      This series also alternates in sign and includes only the even powers of
-      \( x \).
+      This series, like that of the sine, alternates in sign, but it includes
+      only even powers of \( x \). The general term is:
     </p>
-    <p>Explicitly, the series looks like:</p>
-    <div class="formula">
-      \( \cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots
-      \)
+    <div class="formula">\[ \frac{(-1)^n}{(2n)!} x^{2n} \]</div>
+
+    <div class="box-container text-center mb-4">
+      <div id="powerSeriesCosine" class="box">
+        <script src="./js/powerSeriesCosine.js"></script>
+      </div>
+      <p>Visualizing the Power Series of Cosine</p>
     </div>
-    <p>Here's the breakdown of the first few terms:</p>
+
+    <h3>Expanded Form:</h3>
+    <div class="formula">
+      \[ \cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots
+      \]
+    </div>
+    <p>Where:</p>
     <ul>
-      <li>First term: \( 1 \)</li>
-      <li>Second term: \( -\frac{x^2}{2} \) (since \( 2! = 2 \))</li>
-      <li>Third term: \( \frac{x^4}{24} \) (since \( 4! = 24 \))</li>
+      <li>\( x^2/2! \) is the second-degree term, with \( 2! = 2 \).</li>
+      <li>\( x^4/4! \) is the fourth-degree term, with \( 4! = 24 \).</li>
     </ul>
 
-    <h3>Example: Approximating \(\cos(x)\)</h3>
-    <p>To approximate \(\cos(0.5)\) using the first three terms:</p>
-    <div class="formula">
-      \( \cos(0.5) \approx 1 - \frac{0.5^2}{2} + \frac{0.5^4}{24} \)
-    </div>
-    <div class="formula">\( \approx 1 - 0.125 + 0.0026042 \)</div>
-    <div class="formula">\( \approx 0.8776042 \)</div>
+    <h3>Convergence:</h3>
+    <p>
+      The cosine power series converges for all real values of \( x \). Similar
+      to the sine series, the convergence is faster near \( x = 0 \), making it
+      effective for small angles.
+    </p>
 
-    <h2>Summary</h2>
-    <p><strong>Power series of sine:</strong></p>
+    <h3>Example: Approximating \(\cos(x)\)</h3>
+    <p>To approximate \(\cos(0.5)\) using the first few terms of the series:</p>
     <div class="formula">
-      \( \sin(x) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!} \)
-    </div>
-    <div class="formula">
-      \( = x - \frac{x^3}{6} + \frac{x^5}{120} - \cdots \)
-    </div>
-    <p><strong>Power series of cosine:</strong></p>
-    <div class="formula">
-      \( \cos(x) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!} \)
-    </div>
-    <div class="formula">
-      \( = 1 - \frac{x^2}{2} + \frac{x^4}{24} - \cdots \)
+      \[ \cos(0.5) \approx 1 - \frac{0.5^2}{2} + \frac{0.5^4}{24} \] \[
+      \cos(0.5) \approx 1 - 0.125 + 0.0026042 \] \[ \cos(0.5) \approx 0.8776042
+      \]
     </div>
     <p>
-      These series allow us to approximate the sine and cosine functions to any
-      desired degree of accuracy by taking enough terms of the series.
-      Understanding and using these series is fundamental in various fields of
-      mathematics, physics, and engineering.
+      This is close to the actual value of \( \cos(0.5) \), which is about
+      0.8775826.
     </p>
+
+    <h2>Applications of Sine and Cosine Power Series</h2>
+    <ul>
+      <li>
+        <strong>Approximations in Physics and Engineering:</strong>
+        <p>
+          Small-angle approximations, where \( \sin(x) \approx x \) and \(
+          \cos(x) \approx 1 - \frac{x^2}{2} \), are derived directly from the
+          first few terms of these power series. These approximations are
+          essential in fields like classical mechanics, optics, and electrical
+          engineering.
+        </p>
+      </li>
+      <li>
+        <strong>Signal Processing:</strong>
+        <p>
+          The Fourier series, which decomposes periodic functions into sums of
+          sines and cosines, relies heavily on the understanding of sine and
+          cosine series. This is foundational in signal processing, where
+          signals are analyzed and manipulated.
+        </p>
+      </li>
+      <li>
+        <strong>Solving Differential Equations:</strong>
+        <p>
+          Many solutions to linear differential equations, particularly those
+          involving periodic phenomena, are expressed in terms of sine and
+          cosine series. This is crucial in studying wave equations, heat
+          equations, and other phenomena in physics.
+        </p>
+      </li>
+      <li>
+        <strong>Computation:</strong>
+        <p>
+          In numerical computation, functions like sine and cosine are often
+          computed using their power series expansions. This is because these
+          expansions can be truncated to provide sufficiently accurate results,
+          especially for small angles or within a limited range of \( x \).
+        </p>
+      </li>
+    </ul>
+
+    <h2>Visualization and Understanding</h2>
+    <p>
+      Visualizing these series expansions can be enlightening. By plotting the
+      sine and cosine functions alongside their power series approximations
+      (truncated to different numbers of terms), one can see how the
+      approximation improves as more terms are included. For small values of \(
+      x \), the truncated series closely matches the actual function, but for
+      larger \( x \), more terms are needed to achieve the same accuracy.
+    </p>
+
+    <h2>Historical Context</h2>
+    <p>
+      The development of the power series for sine and cosine functions is
+      deeply rooted in the history of calculus. Isaac Newton and James Gregory
+      were among the early mathematicians to explore series expansions of
+      trigonometric functions. These expansions played a critical role in the
+      development of calculus and the analysis of functions, laying the
+      groundwork for much of modern mathematical analysis.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      The power series for sine and cosine are powerful tools in mathematics.
+      These series allow us to express these fundamental trigonometric functions
+      as infinite polynomials, providing deep insights into their behavior and
+      enabling numerous practical applications. Whether approximating values for
+      small angles or solving complex differential equations, the power series
+      for sine and cosine are indispensable in both theory and practice.
+    </p>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

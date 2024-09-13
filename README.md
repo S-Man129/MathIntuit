@@ -130,6 +130,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-- **Project Maintainer**: [Sulayman Adebayo] (adebayosulayman129@gmail.com)
+- **Project Maintainer**: [Sulayman.Adebayo] (adebayosulayman129@gmail.com)
 - **Website**: [MathIntuit](https://mathintuit.vercel.app)
 - **GitHub**: [https://github.com/S-Man129](https://github.com/S-Man129)

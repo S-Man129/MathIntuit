@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 50px 0px;
+}
+
+h1 {
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 50px 50px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.form h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input {
+  width: 94%;
+  padding: 10px;
+  margin: 10px 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message {
+  color: #ff0000;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#loginRegSuccess {
+  text-align: center;
+  background-color: rgb(178, 221, 178);
+  padding: 10px 50px;
+  width: 100%;
+  position: relative;
+}

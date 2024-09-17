@@ -12,13 +12,13 @@ const contentData = {
     heading: "Geometry",
     content:
       "Explore intuitive and interactive resources for learning and practicing geometry, perfect for both lecturers and students.",
-    image: "../../asset/course-icon-images/geometry.jpg",
+    image: "/asset/course-icon-images/geometry.jpg",
     cardData: [
       {
         topicTitle: "Conic Section: Ellipse, Parabola and Hyperbola",
         topicText:
           "Explore Ellipse, Parabola and Hyperbola in this engaging math module.",
-        imgSrc: "../../asset/math-images/geometry-animation.gif",
+        imgSrc: "/asset/resources-images/geometry.gif",
         topicLink: "./geometry/conic-section.html",
       },
     ],
@@ -28,13 +28,13 @@ const contentData = {
     heading: "Special Functions",
     content:
       "Explore intuitive and interactive resources for learning and practicing Special Functions like Bessel Functions etc, perfect for both lecturers and students.",
-    image: "../../asset/course-icon-images/measurement.jpg",
+    image: "/asset/course-icon-images/special-function.jpg",
     cardData: [
       {
         topicTitle: "Bessel Function: First and Second kind",
         topicText:
           "Explore the Bessel Function of First kind and Second kind in this engaging math module.",
-        imgSrc: "math-image-1.jpg",
+        imgSrc: "/asset/resources-images/bessel.gif",
         topicLink: "./special-functions/bessel-function.html",
       },
     ],
@@ -44,7 +44,7 @@ const contentData = {
     heading: "Trigonometry",
     content:
       "Explore intuitive and interactive resources for learning and practicing trigonometry, perfect for both lecturers and students.",
-    image: "../../asset/course-icon-images/trigonometry.jpg",
+    image: "/asset/course-icon-images/trigonometry.jpg",
   },
   calculus: {
     title: "Learn Calculus and Analysis - MathIntuit Math Resources",
@@ -57,28 +57,28 @@ const contentData = {
         topicTitle: "Calculus: Differential Equation",
         topicText:
           "Explore Differential equation in this engaging math module.",
-        imgSrc: "../../asset/math-images/math-animation1.gif",
+        imgSrc: "/asset/resources-images/differential-equation.gif",
         topicLink: "./calculus-and-analysis/differential-equation.html",
       },
       {
         topicTitle: "Analysis: Mean Value Theorem",
         topicText:
           "Understand the Mean Value Theorem with easy-to-follow examples.",
-        imgSrc: "../../asset/math-images/math-animation2.gif",
+        imgSrc: "/asset/resources-images/mvt.gif",
         topicLink: "./calculus-and-analysis/mean-value-theorem.html",
       },
       {
         topicTitle: "Calculus: Power Series",
         topicText:
           "Explore Power Series of Sine and Cosine in this engaging math module.",
-        imgSrc: "math-image-1.jpg",
+        imgSrc: "/asset/resources-images/power-series.gif",
         topicLink: "./calculus-and-analysis/power-series-sine-cosine.html",
       },
       {
         topicTitle: "Calculus: Riemann Sum",
         topicText:
           "Explore Riemann Sum with interactive visuals in this engaging math module.",
-        imgSrc: "math-image-1.jpg",
+        imgSrc: "/asset/resources-images/riemann-sum.gif",
         topicLink: "./calculus-and-analysis/riemann-sum.html",
       },
     ],
@@ -88,20 +88,20 @@ const contentData = {
     heading: "Applied Mathematics",
     content:
       "Explore intuitive and interactive resources for learning and practicing how mathematics is applied in real life scenarios, perfect for both lecturers and students.",
-    image: "../../asset/course-icon-images/applied-math.jpg",
+    image: "/asset/course-icon-images/applied-math.webp",
     cardData: [
       {
         topicTitle: "Applied: Population Growth",
         topicText:
           "Explore population growth models in this engaging math module.",
-        imgSrc: "math-image-1.jpg",
+        imgSrc: "/asset/resources-images/population-growth.gif",
         topicLink: "./applied-math/population-growth-model.html",
       },
       {
         topicTitle: "Applied: Lokta Voltera",
         topicText:
           "Understand the Lokta Voltera Predator Prey Model with easy-to-follow examples.",
-        imgSrc: "math-image-2.jpg",
+        imgSrc: "/asset/resources-images/predator-prey.gif",
         topicLink: "./applied-math/lotka-voltera-model.html",
       },
     ],
@@ -117,7 +117,7 @@ function generateCard(card) {
               <div class="col-md-4">
                   <img src="${
                     card.imgSrc
-                  }" class="img-fluid rounded-start h-100" alt="${
+                  }" class="img-fluid rounded-start" style="width: 100%; height: 180px" alt="${
     card.topicTitle
   }">
               </div>

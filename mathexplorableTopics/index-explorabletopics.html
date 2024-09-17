@@ -19,17 +19,100 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
+
+    <script
+      src="https://kit.fontawesome.com/0b818736fc.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.2.2/jsxgraphcore.js"></script>
     <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
 
     <title>MathIntuit - Interactive Education Mathematics Platform!</title>
+    <style>
+      #contentFrame {
+        display: block;
+        margin: auto;
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+        border: none;
+        overflow: hidden; /* Hide the scrollbar */
+      }
+
+      /* Allow the iframe to scroll content */
+      #contentFrame {
+        pointer-events: auto;
+        overflow-y: scroll; /* Enable vertical scrolling */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      #contentFrame::-webkit-scrollbar {
+        display: none; /* Hide scrollbar in WebKit browsers */
+      }
+    </style>
   </head>
   <body>
-    <!-- header navigation -->
-    <div id="header"></div>
+    <!-- Header and Nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="/index.html">MathIntuit</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul
+            class="navbar-nav me-auto mb-2 mb-lg-0 m-auto gap-4 fs-5 d-inline-flex"
+          >
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href=""
+                data-page="https://ciechanow.ski/tesseract/"
+                tabindex="-1"
+                >Tesseract</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href=""
+                data-page="https://www.jezzamon.com/fourier/index.html"
+                tabindex="-1"
+                >Fourier transform</a
+              >
+            </li>
+            <li class="nav-item flex-end">
+              <a
+                class="nav-link"
+                href=""
+                data-page="https://rreusser.github.io/explorations/sphere-eversion/"
+                tabindex="-1"
+                >Sphere Eversion</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex">
+            <a
+              href="/login_signup/auth.html"
+              type="button"
+              class="btn btn-outline-secondary px-4 py-2"
+            >
+              Sign-In
+            </a>
+          </form>
+        </div>
+      </div>
+    </nav>
 
-    <!-- Get Started with us -->
-    <div id="get-started"></div>
+    <iframe id="contentFrame" class="container p-3"></iframe>
 
     <!-- footer section -->
     <div id="footer"></div>
@@ -44,5 +127,30 @@
     ></script>
     <!-- <script type="" src="./src/js/dynamicContent.js"></script> -->
     <script type="" src="/src/js/script.js"></script>
+    <script type="" src="/src/js/resourcesScript.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const page = params.get("page");
+
+        if (page) {
+          document.getElementById("contentFrame").src = page;
+        }
+
+        document.querySelectorAll(".nav-item a").forEach((link) => {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const page = link.getAttribute("data-page");
+            document.getElementById("contentFrame").src = page;
+            // Optionally update URL for direct linking
+            history.pushState(
+              { page },
+              "",
+              `index-explorabletopics.html?page=${encodeURIComponent(page)}`
+            );
+          });
+        });
+      });
+    </script>
   </body>
 </html>
